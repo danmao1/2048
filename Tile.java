@@ -24,14 +24,14 @@ public class Tile extends JComponent{
     public void paintComponent(Graphics g){
         width = getWidth();
         height = getHeight();
-        g.setColor(Color.white);
+        g.setColor(new Color(123, 120, 109));
         g.fillRect(0, 0, width, height);
 
-        g.fillRoundRect(0, 0, width, height, 40, 40);
-        g.setColor(Color.blue);
+        g.setColor(new Color(198, 192, 183));
+        g.fillRoundRect(5, 5, width-5, height-5, 40, 40);
         
+        g.setColor(Color.white);
         g.drawString(Integer.toString(value), width/2, height/2);
-        g.setColor(Color.gray);
-
+        
     }
 }
