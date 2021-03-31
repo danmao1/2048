@@ -28,7 +28,7 @@ public class Tile extends JComponent{
         g.fillRect(0, 0, width, height);
 
         g.setColor(new Color(198, 192, 183));
-        g.fillRoundRect(5, 5, width-5, height-5, 40, 40);
+        g.fillRoundRect(5, 5, width-10, height-10, 40, 40);
         
         g.setColor(Color.white);
         g.drawString(Integer.toString(value), width/2, height/2);
