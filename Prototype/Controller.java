@@ -1,4 +1,4 @@
-import java.util.Random;
+
 
 public class Controller {
     Board board;
@@ -9,10 +9,6 @@ public class Controller {
 
     public void startNewGame(){
 
-    }
-
-    public void addTile(){
-        Random random = new Random();
     }
 
     public void moveLeft(){
