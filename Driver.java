@@ -4,26 +4,27 @@ import javax.swing.*;
 public class Driver {
     public static void main(String args[]){
         Board board = new Board();
+        mainScreenGUI ui = new mainScreenGUI(board);
+        Controller controller = new Controller(board);
 
-        JFrame frame = new JFrame("2048");
-        frame.setPreferredSize(new Dimension(400, 450));
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JPanel mainPanel = new JPanel();
+        /*
+        ui.addNewGameListener(
+            new ActionListener(){
+                public void actionPerformed(ActionEvent e){
+                    controller.startNewGame();
+                }
+            }
+        );
 
-        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
-        JPanel menuPanel = new JPanel();
-        JButton newGameButton = new JButton("New Game");
-        JButton leaderboardButton = new JButton("Leaderboard");
-        menuPanel.add(newGameButton);
-        menuPanel.add(leaderboardButton);
+        ui.addLeaderboardListener(
+            new ActionListener(){
+                public void actionPerformed(ActionEvent e){
+                    controller.
+                }
+            }
+        );
+        */
 
-        mainPanel.add(menuPanel);
-        mainPanel.add(board);
-
-        frame.add(mainPanel);
-
-        frame.pack();
-        frame.setVisible(true);
     }
 }
