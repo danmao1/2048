@@ -3,9 +3,9 @@ import javax.swing.*;
 
 public class Driver {
     public static void main(String args[]){
-        mainScreenGUI ui = new mainScreenGUI();
-
-        //Controller controller = new Controller();
+        Board board = new Board();
+        mainScreenGUI ui = new mainScreenGUI(board);
+        Controller controller = new Controller(board);
 
 
         /*

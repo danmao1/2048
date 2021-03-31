@@ -11,8 +11,8 @@ public class mainScreenGUI {
     JButton newGameButton;
     JButton leaderboardButton;
 
-    public mainScreenGUI(){
-        board = new Board();
+    public mainScreenGUI(Board board){
+        this.board = board;
 
         frame = new JFrame("2048");
         frame.setPreferredSize(new Dimension(400, 450));
