@@ -12,7 +12,7 @@ public class Driver {
         ui.addNewGameListener(
             new ActionListener(){
                 public void actionPerformed(ActionEvent e){
-                    controller.
+                    controller.startNewGame();
                 }
             }
         );
