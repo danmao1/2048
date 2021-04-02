@@ -28,6 +28,7 @@ public class Board extends JPanel{
         nums[row][col] = new Tile(value);
     }
 
+    /*
     public void update(){
         Tile tile;
         for(int i = 0; i < row; i++){
@@ -39,6 +40,7 @@ public class Board extends JPanel{
         }
         tile.repaint();
     }
+    */
 
     /*
     public void addTile(){
