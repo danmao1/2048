@@ -34,17 +34,17 @@ public class mainScreenGUI {
         
         ImageIcon newGame = new ImageIcon("Images/NewGame.png");
         Image temp1 = newGame.getImage() ;  
-        Image newimg1 = temp1.getScaledInstance(108, 30, java.awt.Image.SCALE_SMOOTH);  
+        Image newimg1 = temp1.getScaledInstance(108, 36, java.awt.Image.SCALE_SMOOTH);  
         newGame = new ImageIcon(newimg1);
         newGameButton = new JButton(newGame);
-        newGameButton.setBounds(250, 132, 108, 30);
+        newGameButton.setBounds(250, 132, 108, 36);
         
         ImageIcon leaderboard = new ImageIcon("Images/Leaderboard.png");
         Image temp2 = leaderboard.getImage() ;  
-        Image newimg2 = temp2.getScaledInstance(90, 30, java.awt.Image.SCALE_SMOOTH);  
+        Image newimg2 = temp2.getScaledInstance(108, 36, java.awt.Image.SCALE_SMOOTH);  
         leaderboard = new ImageIcon(newimg2);
         leaderboardButton = new JButton(leaderboard);
-        leaderboardButton.setBounds(375, 132, 90, 30);
+        leaderboardButton.setBounds(375, 132, 108, 36);
 
         ImageIcon logo = new ImageIcon("Images/LogoIcon.png");
         Image temp3 = logo.getImage() ;  
@@ -62,6 +62,14 @@ public class mainScreenGUI {
         scoreImageLabel = new JLabel(scoreScaled);
         scoreImageLabel.setBounds(250, 18, 108, 108);
         menuPanel.add(scoreImageLabel);
+
+        ImageIcon bestScoreIcon = new ImageIcon("Images/BestIcon.png");
+        Image temp5 = bestScoreIcon.getImage();
+        Image newimg5 = temp5.getScaledInstance(108, 108, java.awt.Image.SCALE_SMOOTH);
+        ImageIcon bestScaled = new ImageIcon(newimg5);
+        bestScoreImageLabel = new JLabel(bestScaled);
+        bestScoreImageLabel.setBounds(375, 18, 108, 108);
+        menuPanel.add(bestScoreImageLabel);
 
 
         menuPanel.add(newGameButton);
