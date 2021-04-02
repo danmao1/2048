@@ -1,9 +1,7 @@
+package team4;
+
 import java.awt.*;
 import javax.swing.*;
-
-import model.*;
-import view.*;
-import controller.*;
 
 public class Driver {
     public static void main(String args[]){

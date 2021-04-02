@@ -40,6 +40,7 @@ public class Board extends JPanel{
         tile.repaint();
     }
 
+    /*
     public void addTile(){
         int tempRow;
         int tempCol;
@@ -51,4 +52,5 @@ public class Board extends JPanel{
         }
         nums[tempRow][tempCol] = 2;
     }
+    */
 }
