@@ -1,5 +1,5 @@
-import model.*;
-import view.*;
+import team4.model.*;
+import team4.view.*;
 
 public class Controller {
     Board board;
