@@ -22,7 +22,7 @@ public class mainScreenGUI {
 
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
         menuPanel = new JPanel();
-        //mainPanel.setBackground(new Color());  //background color of main screen
+        mainPanel.setBackground(new Color(250, 248, 239));
         newGameButton = new JButton("New Game");
         leaderboardButton = new JButton("Leaderboard");
         menuPanel.add(newGameButton);
