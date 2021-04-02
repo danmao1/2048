@@ -8,6 +8,7 @@ public class mainScreenGUI {
     JFrame frame;
     JPanel mainPanel;
     JPanel menuPanel;
+    JLabel logoLabel;
     JButton newGameButton;
     JButton leaderboardButton;
 
@@ -25,6 +26,7 @@ public class mainScreenGUI {
         menuPanel = new JPanel();
         menuPanel.setLayout(null);
         menuPanel.setBackground(Color.white);
+
         
         ImageIcon newGame = new ImageIcon("Images/NewGame.png");
         Image temp1 = newGame.getImage() ;  
@@ -38,26 +40,36 @@ public class mainScreenGUI {
         Image newimg2 = temp2.getScaledInstance(90, 30, java.awt.Image.SCALE_SMOOTH);  
         leaderboard = new ImageIcon(newimg2);
         leaderboardButton = new JButton(leaderboard);
+        leaderboardButton.setBounds(375, 132, 90, 30);
 
+        ImageIcon logo = new ImageIcon("Images/LogoIcon.png");
+        Image temp3 = logo.getImage() ;  
+        Image newimg3 = temp3.getScaledInstance(142, 142, java.awt.Image.SCALE_SMOOTH);
+        ImageIcon logoScaled = new ImageIcon(newimg3);
+        logoLabel = new JLabel();
+        logoLabel.setIcon(logoScaled);
+        logoLabel.setBounds(18, 18, 142, 142);
+        menuPanel.add(logoLabel);
+    
 		JPanel scorePanel= new JPanel();
         
 		JLabel userScore = new JLabel("SCORE \n 0"); //SCORE WOULD BE board.getScore();
-		userScore.setForeground( Color.WHITE );
+		userScore.setForeground(Color.WHITE);
 		userScore.setFont(userScore.getFont().deriveFont(20f));
-        scorePanel.setPreferredSize(new Dimension(50,50));
         scorePanel.setBackground(Color.DARK_GRAY);
         scorePanel.add(userScore);
-        frame.add(scorePanel,BorderLayout.NORTH);
+        scorePanel.setBounds(250, 18, 90, 90);
+        menuPanel.add(scorePanel);
         
         JPanel bestScorePanel= new JPanel();
         
 		JLabel bestUserScore = new JLabel("Best \n 0"); //SCORE WOULD BE board.getBestScore();
-		bestUserScore.setForeground( Color.WHITE );
+		bestUserScore.setForeground(Color.WHITE);
 		bestUserScore.setFont(bestUserScore.getFont().deriveFont(20f));
-        bestScorePanel.setPreferredSize(new Dimension(50,50));
         bestScorePanel.setBackground(Color.DARK_GRAY);
         bestScorePanel.add(bestUserScore);
-        frame.add(bestScorePanel,BorderLayout.SOUTH);
+        bestScorePanel.setBounds(375, 18, 90, 90);
+        menuPanel.add(bestScorePanel);
 
         menuPanel.add(newGameButton);
         menuPanel.add(leaderboardButton);
