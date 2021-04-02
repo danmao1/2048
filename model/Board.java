@@ -39,7 +39,7 @@ public class Board extends JPanel{
         }
         tile.repaint();
     }
-    public int getScore {
+    public int getScore() {
 		return this.userScore;
 	}
 
