@@ -24,7 +24,9 @@ public class mainScreenGUI {
         menuPanel = new JPanel();
         mainPanel.setBackground(new Color(250, 248, 239));
         newGameButton = new JButton("New Game");
+        //ImageIcon newGame = new ImageIcon();
         leaderboardButton = new JButton("Leaderboard");
+        //ImageIcon leaderBoard = new ImageIcon();
         menuPanel.add(newGameButton);
         menuPanel.add(leaderboardButton);
 
