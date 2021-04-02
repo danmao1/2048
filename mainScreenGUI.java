@@ -8,6 +8,8 @@ public class mainScreenGUI {
     JFrame frame;
     JPanel mainPanel;
     JPanel menuPanel;
+    JPanel scorePanel;
+    JPanel highScorePanel;
     JLabel logoLabel;
     JButton newGameButton;
     JButton leaderboardButton;
@@ -51,8 +53,7 @@ public class mainScreenGUI {
         logoLabel.setBounds(18, 18, 142, 142);
         menuPanel.add(logoLabel);
     
-		JPanel scorePanel= new JPanel();
-        
+		scorePanel = new JPanel();
 		JLabel userScore = new JLabel("SCORE \n 0"); //SCORE WOULD BE board.getScore();
 		userScore.setForeground(Color.WHITE);
 		userScore.setFont(userScore.getFont().deriveFont(20f));
