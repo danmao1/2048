@@ -1,4 +1,5 @@
-
+import model.*;
+import view.*;
 
 public class Controller {
     Board board;

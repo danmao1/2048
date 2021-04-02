@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+import model.*;
+
 public class mainScreenGUI {
     Board board;
 
