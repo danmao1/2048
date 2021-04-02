@@ -5,7 +5,7 @@ import java.util.Random;
 public class Board extends JPanel{
     protected static final int row = 4;
     protected static final int col = 4;
-    
+    int userScore=0;
     private Tile nums[][];
 
     public Board(){
@@ -39,6 +39,9 @@ public class Board extends JPanel{
         }
         tile.repaint();
     }
+    public int getScore() {
+		return this.userScore;
+	}
 
     public void addTile(){
         int tempRow;
