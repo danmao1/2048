@@ -39,6 +39,26 @@ public class mainScreenGUI {
         leaderboard = new ImageIcon(newimg2);
         leaderboardButton = new JButton(leaderboard);
 
+		JPanel scorePanel= new JPanel();
+        
+		JLabel userScore = new JLabel("SCORE \n 0"); //SCORE WOULD BE board.getScore();
+		userScore.setForeground( Color.WHITE );
+		userScore.setFont(userScore.getFont().deriveFont(20f));
+        scorePanel.setPreferredSize(new Dimension(50,50));
+        scorePanel.setBackground(Color.DARK_GRAY);
+        scorePanel.add(userScore);
+        frame.add(scorePanel,BorderLayout.NORTH);
+        
+        JPanel bestScorePanel= new JPanel();
+        
+		JLabel bestUserScore = new JLabel("Best \n 0"); //SCORE WOULD BE board.getBestScore();
+		bestUserScore.setForeground( Color.WHITE );
+		bestUserScore.setFont(bestUserScore.getFont().deriveFont(20f));
+        bestScorePanel.setPreferredSize(new Dimension(50,50));
+        bestScorePanel.setBackground(Color.DARK_GRAY);
+        bestScorePanel.add(bestUserScore);
+        frame.add(bestScorePanel,BorderLayout.SOUTH);
+
         menuPanel.add(newGameButton);
         menuPanel.add(leaderboardButton);
 
