@@ -7,10 +7,12 @@ public class mainScreenGUI {
 
     JFrame frame;
     JPanel mainPanel;
-    JPanel menuPanel;
-    JPanel scorePanel;
-    JPanel highScorePanel;
+    JPanel menuPanel; 
     JLabel logoLabel;
+    JLabel scoreImageLabel;
+    JLabel scoreLabel;
+    JLabel bestScoreImageLabel;
+    JLabel bestScoreLabel;
     JButton newGameButton;
     JButton leaderboardButton;
 
@@ -32,10 +34,10 @@ public class mainScreenGUI {
         
         ImageIcon newGame = new ImageIcon("Images/NewGame.png");
         Image temp1 = newGame.getImage() ;  
-        Image newimg1 = temp1.getScaledInstance(90, 30, java.awt.Image.SCALE_SMOOTH);  
+        Image newimg1 = temp1.getScaledInstance(108, 30, java.awt.Image.SCALE_SMOOTH);  
         newGame = new ImageIcon(newimg1);
         newGameButton = new JButton(newGame);
-        newGameButton.setBounds(250, 132, 90, 30);
+        newGameButton.setBounds(250, 132, 108, 30);
         
         ImageIcon leaderboard = new ImageIcon("Images/Leaderboard.png");
         Image temp2 = leaderboard.getImage() ;  
@@ -48,29 +50,19 @@ public class mainScreenGUI {
         Image temp3 = logo.getImage() ;  
         Image newimg3 = temp3.getScaledInstance(142, 142, java.awt.Image.SCALE_SMOOTH);
         ImageIcon logoScaled = new ImageIcon(newimg3);
-        logoLabel = new JLabel();
-        logoLabel.setIcon(logoScaled);
+        logoLabel = new JLabel(logoScaled);
         logoLabel.setBounds(18, 18, 142, 142);
         menuPanel.add(logoLabel);
-    
-		scorePanel = new JPanel();
-		JLabel userScore = new JLabel("SCORE \n 0"); //SCORE WOULD BE board.getScore();
-		userScore.setForeground(Color.WHITE);
-		userScore.setFont(userScore.getFont().deriveFont(20f));
-        scorePanel.setBackground(Color.DARK_GRAY);
-        scorePanel.add(userScore);
-        scorePanel.setBounds(250, 18, 90, 90);
-        menuPanel.add(scorePanel);
         
-        JPanel bestScorePanel= new JPanel();
-        
-		JLabel bestUserScore = new JLabel("Best \n 0"); //SCORE WOULD BE board.getBestScore();
-		bestUserScore.setForeground(Color.WHITE);
-		bestUserScore.setFont(bestUserScore.getFont().deriveFont(20f));
-        bestScorePanel.setBackground(Color.DARK_GRAY);
-        bestScorePanel.add(bestUserScore);
-        bestScorePanel.setBounds(375, 18, 90, 90);
-        menuPanel.add(bestScorePanel);
+
+        ImageIcon scoreIcon = new ImageIcon("Images/ScoreIcon.png");
+        Image temp4 = scoreIcon.getImage() ;  
+        Image newimg4 = temp4.getScaledInstance(108, 108, java.awt.Image.SCALE_SMOOTH);
+        ImageIcon scoreScaled = new ImageIcon(newimg4);
+        scoreImageLabel = new JLabel(scoreScaled);
+        scoreImageLabel.setBounds(250, 18, 108, 108);
+        menuPanel.add(scoreImageLabel);
+
 
         menuPanel.add(newGameButton);
         menuPanel.add(leaderboardButton);
