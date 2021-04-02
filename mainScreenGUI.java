@@ -19,7 +19,8 @@ public class mainScreenGUI {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         mainPanel = new JPanel();
-        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+        mainPanel.setLayout(null);
+        mainPanel.setBackground(Color.white);
 
         menuPanel = new JPanel();
         menuPanel.setLayout(null);
@@ -41,9 +42,10 @@ public class mainScreenGUI {
         menuPanel.add(newGameButton);
         menuPanel.add(leaderboardButton);
 
+        menuPanel.setBounds(0, 0, 500, 208);
         mainPanel.add(menuPanel);
 
-        board.setPreferredSize(new Dimension(390, 390));
+        board.setBounds(53, 208, 392, 392);
         mainPanel.add(board);
 
         frame.add(mainPanel);
