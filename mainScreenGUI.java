@@ -26,11 +26,11 @@ public class mainScreenGUI {
 
         mainPanel = new JPanel();
         mainPanel.setLayout(null);
-        mainPanel.setBackground(Color.white);
+        mainPanel.setBackground(new Color(250, 248, 239));
 
         menuPanel = new JPanel();
         menuPanel.setLayout(null);
-        menuPanel.setBackground(Color.white);
+        menuPanel.setBackground(new Color(250, 248, 239));
 
         ImageIcon newGame = new ImageIcon("Images/NewGame.png");
         Image temp1 = newGame.getImage() ;  
@@ -62,6 +62,11 @@ public class mainScreenGUI {
         scoreImageLabel.setBounds(250, 18, 108, 108);
         menuPanel.add(scoreImageLabel);
 
+        bestScoreLabel = new JLabel("20953");
+        bestScoreLabel.setForeground(Color.white);
+        bestScoreLabel.setBounds(415, 70, 100, 30);
+        menuPanel.add(bestScoreLabel);
+        
         ImageIcon bestScoreIcon = new ImageIcon("Images/BestIcon.png");
         Image temp5 = bestScoreIcon.getImage();
         Image newimg5 = temp5.getScaledInstance(108, 108, java.awt.Image.SCALE_SMOOTH);
