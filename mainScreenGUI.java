@@ -13,6 +13,7 @@ public class mainScreenGUI {
     JLabel scoreLabel;
     JLabel bestScoreImageLabel;
     JLabel bestScoreLabel;
+    JLabel goalBanner;
     JButton newGameButton;
     JButton leaderboardButton;
 
@@ -31,7 +32,6 @@ public class mainScreenGUI {
         menuPanel.setLayout(null);
         menuPanel.setBackground(Color.white);
 
-        
         ImageIcon newGame = new ImageIcon("Images/NewGame.png");
         Image temp1 = newGame.getImage() ;  
         Image newimg1 = temp1.getScaledInstance(108, 36, java.awt.Image.SCALE_SMOOTH);  
@@ -54,7 +54,6 @@ public class mainScreenGUI {
         logoLabel.setBounds(18, 18, 142, 142);
         menuPanel.add(logoLabel);
         
-
         ImageIcon scoreIcon = new ImageIcon("Images/ScoreIcon.png");
         Image temp4 = scoreIcon.getImage() ;  
         Image newimg4 = temp4.getScaledInstance(108, 108, java.awt.Image.SCALE_SMOOTH);
@@ -71,9 +70,14 @@ public class mainScreenGUI {
         bestScoreImageLabel.setBounds(375, 18, 108, 108);
         menuPanel.add(bestScoreImageLabel);
 
+        goalBanner = new JLabel("Join tiles together to get the 2048 tile!");
+        goalBanner.setFont(new Font("Verdona", Font.BOLD, 18));
+        goalBanner.setForeground(new Color(74, 72, 64));
+        goalBanner.setBounds(53, 185, 400, 20);
 
         menuPanel.add(newGameButton);
         menuPanel.add(leaderboardButton);
+        menuPanel.add(goalBanner);
 
         menuPanel.setBounds(0, 0, 500, 208);
         mainPanel.add(menuPanel);
