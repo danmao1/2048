@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
 public class LeaderboardGUI {
     
     JFrame frame;
@@ -9,22 +8,28 @@ public class LeaderboardGUI {
 
     JLabel title;
 
-    int width = 125;
+    int width = 180;
     int height = 58;
-    int xCoord = 121;
-    int yCoord = 228;
-
+    int xCoord = 160;
+    int yCoord = 190;
+    
+	JButton back;
+	
     JLabel bestRect;
     JLabel secondRect;
     JLabel thirdRect;
     JLabel fourthRect;
     JLabel fifthRect;
+	JLabel backRect;
 
     JLabel best;
-    JLabel second;
-    JLabel third;
-    JLabel fourth;
-    JLabel fifth;
+    JLabel secondScore;
+    JLabel thirdScore;
+    JLabel fourthScore;
+    JLabel fifthScore;
+    
+    
+    
 
     public LeaderboardGUI(){
         frame = new JFrame("2048 Leaderboard");
@@ -37,6 +42,54 @@ public class LeaderboardGUI {
 
         mainPanel.setBounds(0, 0, 500, 640);
         frame.add(mainPanel);
+        
+        ImageIcon backImage = new ImageIcon("Images/Back.png");
+        Image tempBack = backImage.getImage() ;  
+        Image newimgBack = tempBack.getScaledInstance(width -100, height-5, java.awt.Image.SCALE_SMOOTH);  
+        ImageIcon backScaled = new ImageIcon(newimgBack);
+        
+        
+        back = new JButton(backScaled);
+        back.setBounds(xCoord - 140, yCoord-180, width-110 , height);
+        mainPanel.add(back);
+
+        
+        
+        title = new JLabel("LEADERBOARD");
+        title.setFont(new Font("Sans Serif", Font.PLAIN, 50));
+        title.setForeground(Color.BLACK);
+        title.setBounds(xCoord -85 , (yCoord) -110, width+250, height);
+        mainPanel.add(title);
+        
+        best = new JLabel("2048");
+        best.setFont(new Font("Sans Serif", Font.PLAIN, 23));
+        best.setForeground(Color.BLACK);
+        best.setBounds(xCoord + 65, (yCoord), width, height);
+        mainPanel.add(best);
+        
+        secondScore= new JLabel("2000");
+        secondScore.setFont(new Font("Sans Serif", Font.PLAIN, 23));
+        secondScore.setForeground(Color.BLACK);
+        secondScore.setBounds(xCoord + 65, (yCoord)+74, width, height);
+        mainPanel.add(secondScore);
+        
+        thirdScore = new JLabel("1500");
+        thirdScore.setFont(new Font("Sans Serif", Font.PLAIN, 23));
+        thirdScore.setForeground(Color.BLACK);
+        thirdScore.setBounds(xCoord + 65, (yCoord)+74 * 2, width, height);
+        mainPanel.add(thirdScore);
+        
+        fourthScore = new JLabel("900");
+        fourthScore.setFont(new Font("Sans Serif", Font.PLAIN, 23));
+        fourthScore.setForeground(Color.BLACK);
+        fourthScore.setBounds(xCoord + 65, (yCoord)+74 * 3, width, height);
+        mainPanel.add(fourthScore);
+        
+        fifthScore = new JLabel("900");
+        fifthScore.setFont(new Font("Sans Serif", Font.PLAIN, 23));
+        fifthScore.setForeground(Color.BLACK);
+        fifthScore.setBounds(xCoord + 65, (yCoord)+74 * 4, width, height);
+        mainPanel.add(fifthScore);
 
         ImageIcon first = new ImageIcon("Images/first.png");
         Image temp1 = first.getImage() ;  
@@ -62,7 +115,7 @@ public class LeaderboardGUI {
         thirdRect.setBounds(xCoord, yCoord + 74 * 2, width, height);
         mainPanel.add(thirdRect);
 
-        ImageIcon fourth = new ImageIcon("Images/fourth.png");
+        ImageIcon fourth = new ImageIcon("Images/forth.png");
         Image temp4 = fourth.getImage() ;  
         Image newimg4 = temp4.getScaledInstance(width, height, java.awt.Image.SCALE_SMOOTH);  
         ImageIcon fourthScaled = new ImageIcon(newimg4);
@@ -78,7 +131,13 @@ public class LeaderboardGUI {
         fifthRect.setBounds(xCoord, yCoord + 74 * 4, width, height);
         mainPanel.add(fifthRect);
 
-        best = new JLabel("2048");
-        best.setFon        
+        
+        
+        frame.pack();
+        frame.setVisible(true);
     }
+    public static void main(String args[]){
+       LeaderboardGUI leaderboard= new LeaderboardGUI();
+   }    
+
 }
