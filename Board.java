@@ -55,11 +55,15 @@ public class Board extends JPanel{
         if(this.isEmpty()){
             nums[tempRow][tempCol].setValue(2);
         }
-        
+
+        int next = random.nextInt(100);
         if(nums[tempRow][tempCol].getValue() == 0){
-            nums[tempRow][tempCol].setValue(2);
+            if(next < 80){
+                nums[tempRow][tempCol].setValue(2);
+            }else{
+                nums[tempRow][tempCol].setValue(4);
+            }
         }
-        
     }
 
     public boolean isEmpty(){
