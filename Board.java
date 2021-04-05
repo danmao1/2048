@@ -42,17 +42,35 @@ public class Board extends JPanel{
     }
     */
 
-    /*
+    
     public void addTile(){
         int tempRow;
         int tempCol;
 
         Random random = new Random();
-        while(nums[row][col] != 0){
+
+        /*
+        if(this.isFilled()){
+            
+        }
+        */
+        
+        do{
             tempRow = random.nextInt(row);
             tempCol = random.nextInt(col);
-        }
-        nums[tempRow][tempCol] = 2;
+            nums[tempRow][tempCol].setValue(2);
+        }while(nums[tempRow][tempCol].getValue() != 0);
     }
-    */
+
+    public boolean isFilled(){
+        for(int i = 0; i < row; i++){
+            for(int j = 0; j < col; j++){
+                if(nums[row][col].getValue() == 0){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
 }

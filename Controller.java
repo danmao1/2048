@@ -8,7 +8,8 @@ public class Controller {
     }
 
     public void startNewGame(){
-
+        board.addTile();
+        board.addTile();
     }
 
     public void moveLeft(){

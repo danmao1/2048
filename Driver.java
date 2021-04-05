@@ -7,6 +7,8 @@ public class Driver {
         mainScreenGUI ui = new mainScreenGUI(board);
         Controller controller = new Controller(board);
 
+        controller.startNewGame();
+
 
         /*
         ui.addNewGameListener(
