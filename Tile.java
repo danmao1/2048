@@ -27,7 +27,13 @@ public class Tile extends JComponent{
         g.setColor(new Color(123, 120, 109));
         g.fillRect(0, 0, width, height);
 
-        g.setColor(new Color(198, 192, 183));
+        if(this.getValue() == 0){
+            g.setColor(new Color(204, 193, 180));
+        }else if(this.getValue() == 2){
+            g.setColor(new Color(238, 228, 218));
+        }else if(this.getValue() == 4){
+            g.setColor(new Color(237, 224, 200));
+        }
         g.fillRoundRect(5, 5, width-10, height-10, 40, 40);
         
         g.setColor(Color.white);

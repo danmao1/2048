@@ -2,6 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 
+
+import java.io.*;
+
 public class Board extends JPanel{
     protected static final int row = 4;
     protected static final int col = 4;
@@ -44,28 +47,36 @@ public class Board extends JPanel{
 
     
     public void addTile(){
-        int tempRow;
-        int tempCol;
-
         Random random = new Random();
 
-        /*
-        if(this.isFilled()){
-            
-        }
-        */
-        
-        do{
-            tempRow = random.nextInt(row);
-            tempCol = random.nextInt(col);
+        int tempRow = random.nextInt(row);
+        int tempCol = random.nextInt(col);
+
+        if(this.isEmpty()){
             nums[tempRow][tempCol].setValue(2);
-        }while(nums[tempRow][tempCol].getValue() != 0);
+        }
+        
+        if(nums[tempRow][tempCol].getValue() == 0){
+            nums[tempRow][tempCol].setValue(2);
+        }
+        
+    }
+
+    public boolean isEmpty(){
+        for(int i = 0; i < row; i++){
+            for(int j = 0; j < col; j++){
+                if(nums[i][j].getValue() != 0){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     public boolean isFilled(){
         for(int i = 0; i < row; i++){
             for(int j = 0; j < col; j++){
-                if(nums[row][col].getValue() == 0){
+                if(nums[i][j].getValue() == 0){
                     return false;
                 }
             }
