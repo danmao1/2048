@@ -2,9 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 
-
-import java.io.*;
-
 public class Board extends JPanel{
     protected static final int row = 4;
     protected static final int col = 4;
@@ -56,13 +53,15 @@ public class Board extends JPanel{
             nums[tempRow][tempCol].setValue(2);
         }
 
-        int next = random.nextInt(100);
+        int percent = random.nextInt(100);
         if(nums[tempRow][tempCol].getValue() == 0){
-            if(next < 80){
+            if(percent < 80){
                 nums[tempRow][tempCol].setValue(2);
             }else{
                 nums[tempRow][tempCol].setValue(4);
             }
+        }else{
+            this.addTile();
         }
     }
 
