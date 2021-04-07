@@ -28,9 +28,6 @@ public class LeaderboardGUI {
     JLabel fourthScore;
     JLabel fifthScore;
     
-    
-    
-
     public LeaderboardGUI(){
         frame = new JFrame("2048 Leaderboard");
         frame.setPreferredSize(new Dimension(500, 640));
