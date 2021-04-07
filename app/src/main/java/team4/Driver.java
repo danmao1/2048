@@ -1,3 +1,9 @@
+package team4;
+import model.*;
+import view.*;
+import controller.*;
+
+
 import java.awt.*;
 import javax.swing.*;
 

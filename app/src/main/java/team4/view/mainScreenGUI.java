@@ -1,3 +1,7 @@
+package view;
+
+import model.*;
+import controller.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -32,21 +36,21 @@ public class mainScreenGUI {
         menuPanel.setLayout(null);
         menuPanel.setBackground(new Color(250, 248, 239));
 
-        ImageIcon newGame = new ImageIcon("Images/NewGame.png");
+        ImageIcon newGame = new ImageIcon("src/main/resrouces/NewGame.png");
         Image temp1 = newGame.getImage() ;  
         Image newimg1 = temp1.getScaledInstance(108, 36, java.awt.Image.SCALE_SMOOTH);  
         newGame = new ImageIcon(newimg1);
         newGameButton = new JButton(newGame);
         newGameButton.setBounds(250, 132, 108, 36);
         
-        ImageIcon leaderboard = new ImageIcon("Images/Leaderboard.png");
+        ImageIcon leaderboard = new ImageIcon("src/main/resrouces/Leaderboard.png");
         Image temp2 = leaderboard.getImage() ;  
         Image newimg2 = temp2.getScaledInstance(108, 36, java.awt.Image.SCALE_SMOOTH);  
         leaderboard = new ImageIcon(newimg2);
         leaderboardButton = new JButton(leaderboard);
         leaderboardButton.setBounds(375, 132, 108, 36);
 
-        ImageIcon logo = new ImageIcon("Images/LogoIcon.png");
+        ImageIcon logo = new ImageIcon("src/main/resrouces/LogoIcon.png");
         Image temp3 = logo.getImage() ;  
         Image newimg3 = temp3.getScaledInstance(142, 142, java.awt.Image.SCALE_SMOOTH);
         ImageIcon logoScaled = new ImageIcon(newimg3);
@@ -54,7 +58,7 @@ public class mainScreenGUI {
         logoLabel.setBounds(18, 18, 142, 142);
         menuPanel.add(logoLabel);
         
-        ImageIcon scoreIcon = new ImageIcon("Images/ScoreIcon.png");
+        ImageIcon scoreIcon = new ImageIcon("src/main/resrouces/ScoreIcon.png");
         Image temp4 = scoreIcon.getImage() ;  
         Image newimg4 = temp4.getScaledInstance(108, 108, java.awt.Image.SCALE_SMOOTH);
         ImageIcon scoreScaled = new ImageIcon(newimg4);
@@ -67,7 +71,7 @@ public class mainScreenGUI {
         bestScoreLabel.setBounds(415, 70, 100, 30);
         menuPanel.add(bestScoreLabel);
         
-        ImageIcon bestScoreIcon = new ImageIcon("Images/BestIcon.png");
+        ImageIcon bestScoreIcon = new ImageIcon("src/main/resrouces/BestIcon.png");
         Image temp5 = bestScoreIcon.getImage();
         Image newimg5 = temp5.getScaledInstance(108, 108, java.awt.Image.SCALE_SMOOTH);
         ImageIcon bestScaled = new ImageIcon(newimg5);
