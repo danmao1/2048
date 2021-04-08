@@ -4,6 +4,8 @@ import controller.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.net.URL;
+
 public class LeaderboardGUI {
     
     JFrame frame;
@@ -48,7 +50,7 @@ public class LeaderboardGUI {
         
         
         
-        URL backPNG = new this.getClass().getClassLoader().getResource("NewGame.png");
+        URL backPNG = this.getClass().getClassLoader().getResource("Back.png");
         
         ImageIcon backImage = new ImageIcon(backPNG);
         Image tempBack = backImage.getImage() ;  
@@ -98,9 +100,9 @@ public class LeaderboardGUI {
         fifthScore.setBounds(xCoord + 65, (yCoord)+74 * 4, width, height);
         mainPanel.add(fifthScore);
 
-		URL firstPNG = new this.getClass().getClassLoader().getResource("first.png");
+		URL firstPNG = this.getClass().getClassLoader().getResource("first.png");
         
-        ImageIcon backImage = new ImageIcon(firstPNG);
+       
         ImageIcon first = new ImageIcon(firstPNG);
         Image temp1 = first.getImage() ;  
         Image newimg1 = temp1.getScaledInstance(width, height, java.awt.Image.SCALE_SMOOTH);  
@@ -109,7 +111,7 @@ public class LeaderboardGUI {
         bestRect.setBounds(xCoord, yCoord, width, height);
         mainPanel.add(bestRect);
 
-        URL secondPNG = new this.getClass().getClassLoader().getResource("second.png");
+        URL secondPNG = this.getClass().getClassLoader().getResource("second.png");
 
         ImageIcon second = new ImageIcon(secondPNG);
         Image temp2 = second.getImage() ;  
@@ -119,9 +121,9 @@ public class LeaderboardGUI {
         secondRect.setBounds(xCoord, yCoord + 74, width, height);
         mainPanel.add(secondRect);
 
-        URL thirdPNG = new this.getClass().getClassLoader().getResource("third.png");
+        URL thirdPNG = this.getClass().getClassLoader().getResource("third.png");
 
-        ImageIcon third = new ImageIcon(third.png);
+        ImageIcon third = new ImageIcon(thirdPNG);
         Image temp3 = third.getImage() ;  
         Image newimg3 = temp3.getScaledInstance(width, height, java.awt.Image.SCALE_SMOOTH);  
         ImageIcon thirdScaled = new ImageIcon(newimg3);
@@ -129,7 +131,7 @@ public class LeaderboardGUI {
         thirdRect.setBounds(xCoord, yCoord + 74 * 2, width, height);
         mainPanel.add(thirdRect);
 
-        URL fourthPNG = new this.getClass().getClassLoader().getResource("forth.png");
+        URL fourthPNG = this.getClass().getClassLoader().getResource("forth.png");
         ImageIcon fourth = new ImageIcon(fourthPNG);
         Image temp4 = fourth.getImage() ;  
         Image newimg4 = temp4.getScaledInstance(width, height, java.awt.Image.SCALE_SMOOTH);  
@@ -138,7 +140,7 @@ public class LeaderboardGUI {
         fourthRect.setBounds(xCoord, yCoord + 74 * 3, width, height);
         mainPanel.add(fourthRect);
 
-        URL fifthPNG = new this.getClass().getClassLoader().getResource("fifth.png");
+        URL fifthPNG = this.getClass().getClassLoader().getResource("fifth.png");
         ImageIcon fifth = new ImageIcon(fifthPNG);
         Image temp5 = fifth.getImage() ;  
         Image newimg5 = temp5.getScaledInstance(width, height, java.awt.Image.SCALE_SMOOTH);  
