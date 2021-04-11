@@ -23,8 +23,8 @@ public class Board extends JPanel{
         }
     }
 
-    public Tile getValue(){
-        return nums[col][row];
+    public int getValue(int row, int col){
+        return nums[row][col].getValue();
     }
 
     public void setValue(int value, int row, int col){
