@@ -1,7 +1,7 @@
 package view;
-
 import model.*;
 import controller.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -10,6 +10,7 @@ import java.net.URL;
 
 public class mainScreenGUI {
     Board board;
+    Controller controller;
 
     JFrame frame;
     JPanel mainPanel;
@@ -23,8 +24,9 @@ public class mainScreenGUI {
     JButton newGameButton;
     JButton leaderboardButton;
 
-    public mainScreenGUI(Board board){
+    public mainScreenGUI(Board board, Controller controller){
         this.board = board;
+        this.controller = controller;
 
         frame = new JFrame("2048");
         frame.setPreferredSize(new Dimension(500, 640));
@@ -104,6 +106,7 @@ public class mainScreenGUI {
 
         frame.add(mainPanel);
 
+        frame.addKeyListener(controller);
         frame.pack();
         frame.setVisible(true);
     }

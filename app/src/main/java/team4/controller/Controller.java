@@ -2,31 +2,46 @@ package controller;
 import model.*;
 import view.*;
 
+import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
 
-public class Controller {
+public class Controller implements KeyListener{
     Board board;
+    Moves mover;
 
     public Controller(Board board){
         this.board = board;
+        mover = new Moves(board);
     }
 
     public void startNewGame(){
         board.addTile();
     }
 
-    public void moveLeft(){
+    @Override
+    public void keyPressed(KeyEvent e){
+        if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+
+        }else if(e.getKeyCode() == KeyEvent.VK_LEFT){
+
+        }else if(e.getKeyCode() == KeyEvent.VK_UP){
+            mover.up();
+            board.addTile();
+        }else if(e.getKeyCode() == KeyEvent.VK_DOWN){
+
+        }
+        board.update();
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e){
 
     }
 
-    public void moveRight(){
+    @Override
+    public void keyTyped(KeyEvent e){
         
     }
 
-    public void moveUp(){
-        
-    }
-
-    public void moveDown(){
-        
-    }
+    
 }

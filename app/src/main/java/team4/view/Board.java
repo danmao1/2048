@@ -1,6 +1,7 @@
 package view;
 import model.*;
 import controller.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
@@ -29,23 +30,18 @@ public class Board extends JPanel{
 
     public void setValue(int value, int row, int col){
         nums[row][col] = new Tile(value);
+        this.update();
     }
 
-    /*
     public void update(){
-        Tile tile;
         for(int i = 0; i < row; i++){
             for(int j = 0; j < col; j++){
-                tile = this.getValue();
-                int value = tile.getValue();
-                tile.setValue(value);
+                
+                nums[i][j].repaint();
             }
         }
-        tile.repaint();
     }
-    */
 
-    
     public void addTile(){
         Random random = new Random();
 
