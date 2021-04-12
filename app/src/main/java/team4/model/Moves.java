@@ -38,7 +38,8 @@ public class Moves {
     }
 
     public void down(){
-        
+        board.setValue(8, 2, 2);
+        System.out.println("Down");
     }
 
     public void left(){

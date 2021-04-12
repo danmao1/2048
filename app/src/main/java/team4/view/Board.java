@@ -30,17 +30,18 @@ public class Board extends JPanel{
 
     public void setValue(int value, int row, int col){
         nums[row][col] = new Tile(value);
-        this.update();
+        //this.update();
     }
 
+    /*
     public void update(){
         for(int i = 0; i < row; i++){
             for(int j = 0; j < col; j++){
-                
                 nums[i][j].repaint();
             }
         }
     }
+    */
 
     public void addTile(){
         Random random = new Random();

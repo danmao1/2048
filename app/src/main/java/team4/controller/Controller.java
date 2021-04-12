@@ -28,9 +28,10 @@ public class Controller implements KeyListener{
             mover.up();
             board.addTile();
         }else if(e.getKeyCode() == KeyEvent.VK_DOWN){
-
+            mover.down();
+            board.addTile();
         }
-        board.update();
+        //board.update();
     }
 
     @Override
