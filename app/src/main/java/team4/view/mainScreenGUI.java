@@ -106,7 +106,6 @@ public class mainScreenGUI {
 
         frame.add(mainPanel);
 
-        frame.addKeyListener(controller);
         frame.pack();
         frame.setVisible(true);
     }

@@ -14,7 +14,7 @@ public class Board extends JPanel{
 
     public Board(){
         this.setLayout(new GridLayout(row, col));
-        nums = new Tile[col][row];
+        nums = new Tile[row][col];
 
         for(int i = 0; i < row; i++){
             for(int j = 0; j < col; j++){
@@ -29,11 +29,11 @@ public class Board extends JPanel{
     }
 
     public void setValue(int value, int row, int col){
-        nums[row][col] = new Tile(value);
-        //this.update();
+        nums[row][col].setValue(value);
+        this.update();
     }
 
-    /*
+    
     public void update(){
         for(int i = 0; i < row; i++){
             for(int j = 0; j < col; j++){
@@ -41,13 +41,16 @@ public class Board extends JPanel{
             }
         }
     }
-    */
 
-    public void addTile(){
+    public boolean addTile(){
         Random random = new Random();
 
         int tempRow = random.nextInt(row);
         int tempCol = random.nextInt(col);
+
+        if(this.isFilled()){
+            return false;
+        }
 
         if(this.isEmpty()){
             nums[tempRow][tempCol].setValue(2);
@@ -63,6 +66,8 @@ public class Board extends JPanel{
         }else{
             this.addTile();
         }
+
+        return true;
     }
 
     public boolean isEmpty(){
@@ -86,5 +91,16 @@ public class Board extends JPanel{
         }
         return true;
     }
-    
+
+    /*
+    public void reset(){
+        nums = new Tile[row][col];
+
+        for(int i = 0; i < row; i++){
+            for(int j = 0; j < col; j++){
+                nums[i][j].setValue(0);
+            }
+        }
+    }
+    */
 }

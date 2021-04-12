@@ -26,6 +26,7 @@ public class Tile extends JComponent{
 
     @Override
     public void paintComponent(Graphics g){
+        super.paintComponent(g);
         width = getWidth();
         height = getHeight();
         g.setColor(new Color(123, 120, 109));

@@ -15,23 +15,22 @@ public class Controller implements KeyListener{
     }
 
     public void startNewGame(){
+        //board.reset();
         board.addTile();
     }
 
     @Override
     public void keyPressed(KeyEvent e){
         if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-
+            mover.right();
         }else if(e.getKeyCode() == KeyEvent.VK_LEFT){
-
+            mover.left();
         }else if(e.getKeyCode() == KeyEvent.VK_UP){
             mover.up();
-            board.addTile();
         }else if(e.getKeyCode() == KeyEvent.VK_DOWN){
             mover.down();
-            board.addTile();
         }
-        //board.update();
+        board.addTile();
     }
 
     @Override
