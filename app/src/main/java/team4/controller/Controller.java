@@ -36,7 +36,7 @@ public class Controller implements KeyListener{
         }
         board.addTile();
     }
-	public void leaderboardCalculation(int score) {
+	/*public void leaderboardCalculation(int score) {
 		ArrayList<String> leader= new ArrayList<String> ();
 		URL text = this.getClass().getClassLoader().getResource("scores.txt");
 		File file = new File(text);
@@ -57,7 +57,7 @@ public class Controller implements KeyListener{
 				bw.write(leader[j]);
 				j++;
 			}
-		}
+		}*/
 		
 			
 		

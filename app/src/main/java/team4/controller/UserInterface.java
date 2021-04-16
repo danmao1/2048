@@ -2,6 +2,6 @@ package controller;
 import model.*;
 import view.*;
 
-public class UserInterface {
+public interface UserInterface {
     public void leaderboardCalculation(); 
 }
