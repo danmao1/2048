@@ -6,20 +6,21 @@ import controller.*;
 import java.awt.event.*;
 public class Driver {
     public static void main(String args[]){
-        Board board = new Board();
+        BoardGUI boardGUI = new BoardGUI();
         LeaderboardGUI leaderboard = new LeaderboardGUI();
+        Board board = new Board();
         Controller controller = new Controller(board);
-        mainScreenGUI ui = new mainScreenGUI(board, controller, leaderboard);
+        mainScreenGUI ui = new mainScreenGUI(boardGUI, controller, leaderboard);
         
-        board.setFocusable(true);
-        board.requestFocusInWindow();
-        board.addKeyListener(controller);
+        boardGUI.setFocusable(true);
+        boardGUI.requestFocusInWindow();
+        boardGUI.addKeyListener(controller);
 
         ui.addNewGameListener(
             new ActionListener(){
                 public void actionPerformed(ActionEvent e){
                     controller.startNewGame();
-                    board.requestFocusInWindow();
+                    boardGUI.requestFocusInWindow();
                 }
             }
         );
@@ -36,7 +37,7 @@ public class Driver {
             new ActionListener(){
                 public void actionPerformed(ActionEvent e){
                     controller.showMainScreen(leaderboard);
-                    board.requestFocusInWindow();
+                    boardGUI.requestFocusInWindow();
                 }
             }
         );

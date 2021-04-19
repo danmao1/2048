@@ -1,28 +1,14 @@
-package view;
-import model.*;
-import controller.*;
+package model;
 
-import javax.swing.*;
-import java.awt.*;
+import view.*;
+
 import java.util.Random;
 
-public class Board extends JPanel{
-    protected static final int row = 4;
-    protected static final int col = 4;
+public class Board {
+    public static final int row = 4;
+    public static final int col = 4;
     
-    private Tile nums[][];
-
-    public Board(){
-        this.setLayout(new GridLayout(row, col));
-        nums = new Tile[row][col];
-
-        for(int i = 0; i < row; i++){
-            for(int j = 0; j < col; j++){
-                nums[i][j] = new Tile(0);
-                this.add(nums[i][j]);
-            }
-        }
-    }
+    public Tile nums[][];
 
     public int getValue(int row, int col){
         return nums[row][col].getValue();
@@ -33,7 +19,6 @@ public class Board extends JPanel{
         this.update();
     }
 
-    
     public void update(){
         for(int i = 0; i < row; i++){
             for(int j = 0; j < col; j++){

@@ -9,7 +9,7 @@ import java.net.URL;
 
 
 public class mainScreenGUI {
-    Board board;
+    BoardGUI board;
     Controller controller;
     LeaderboardGUI leaderboard;
 
@@ -25,7 +25,7 @@ public class mainScreenGUI {
     JButton newGameButton;
     JButton leaderboardButton;
 
-    public mainScreenGUI(Board board, Controller controller, LeaderboardGUI leaderboard){
+    public mainScreenGUI(BoardGUI board, Controller controller, LeaderboardGUI leaderboard){
         this.board = board;
         this.controller = controller;
         this.leaderboard = leaderboard;

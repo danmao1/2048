@@ -1,7 +1,5 @@
 package model;
 
-import view.*;
-
 public class Moves {
     Board board;
 
