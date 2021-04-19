@@ -12,7 +12,7 @@ public class mainScreenGUI {
     Board board;
     Controller controller;
 
-    JFrame frame;
+    public JFrame frame;
     JPanel mainPanel;
     JPanel menuPanel; 
     JLabel logoLabel;

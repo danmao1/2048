@@ -9,12 +9,12 @@ public class Driver {
         Board board = new Board();
         Controller controller = new Controller(board);
         mainScreenGUI ui = new mainScreenGUI(board, controller);
+        LeaderboardGUI leaderboard = new LeaderboardGUI();
 
         board.setFocusable(true);
         board.requestFocusInWindow();
         board.addKeyListener(controller);
 
-        
         ui.addNewGameListener(
             new ActionListener(){
                 public void actionPerformed(ActionEvent e){
@@ -24,17 +24,23 @@ public class Driver {
             }
         );
 
-        /*
         ui.addLeaderboardListener(
             new ActionListener(){
                 public void actionPerformed(ActionEvent e){
-                    controller.
+                    controller.showLeaderboard();
+                }
+            }
+        );
+
+        leaderboard.addBackListener(
+            new ActionListener(){
+                public void actionPerformed(ActionEvent e){
+                    controller.showMainScreen(ui);
                     board.requestFocusInWindow();
                 }
             }
         );
-        */
-
+        
         controller.startNewGame();
     }
 }

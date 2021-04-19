@@ -8,7 +8,7 @@ import java.net.URL;
 
 public class LeaderboardGUI {
     
-    JFrame frame;
+    public JFrame frame;
     JPanel mainPanel;
 
     JLabel title;
@@ -148,14 +148,12 @@ public class LeaderboardGUI {
         fifthRect = new JLabel(fifthScaled);
         fifthRect.setBounds(xCoord, yCoord + 74 * 4, width, height);
         mainPanel.add(fifthRect);
-
-        
         
         frame.pack();
-        frame.setVisible(true);
     }
-    public static void main(String args[]){
-       LeaderboardGUI leaderboard= new LeaderboardGUI();
-   }    
+
+    public void addBackListener(ActionListener l){
+        back.addActionListener(l);
+    }
 
 }
