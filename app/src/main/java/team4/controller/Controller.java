@@ -38,8 +38,8 @@ public class Controller implements KeyListener{
 	    leaderboard.frame.setVisible(true);
     }
 
-    public void showMainScreen(mainScreenGUI ui){
-        ui.frame.setVisible(true);
+    public void showMainScreen(LeaderboardGUI leaderboard){
+        leaderboard.frame.dispose();
     }
     
     @Override
