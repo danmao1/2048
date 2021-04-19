@@ -5,4 +5,5 @@ import view.*;
 public interface UserInterface {
     public void startNewGame();
     public void showLeaderboard(); 
+    public void showMainScreen(mainScreenGUI ui);
 }

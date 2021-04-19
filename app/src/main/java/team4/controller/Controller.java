@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.net.URL;
 
 
-public class Controller implements KeyListener{
+public class Controller implements KeyListener, UserInterface{
     Board board;
     Moves mover;
 
