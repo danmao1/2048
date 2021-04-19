@@ -7,10 +7,10 @@ import java.awt.event.*;
 public class Driver {
     public static void main(String args[]){
         Board board = new Board();
-        Controller controller = new Controller(board);
-        mainScreenGUI ui = new mainScreenGUI(board, controller);
         LeaderboardGUI leaderboard = new LeaderboardGUI();
-
+        Controller controller = new Controller(board);
+        mainScreenGUI ui = new mainScreenGUI(board, controller, leaderboard);
+        
         board.setFocusable(true);
         board.requestFocusInWindow();
         board.addKeyListener(controller);
@@ -27,12 +27,12 @@ public class Driver {
         ui.addLeaderboardListener(
             new ActionListener(){
                 public void actionPerformed(ActionEvent e){
-                    controller.showLeaderboard();
+                    controller.showLeaderboard(leaderboard);
                 }
             }
         );
 
-        leaderboard.addBackListener(
+        ui.addBackListener(
             new ActionListener(){
                 public void actionPerformed(ActionEvent e){
                     controller.showMainScreen(ui);

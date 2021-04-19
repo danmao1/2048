@@ -11,6 +11,7 @@ import java.net.URL;
 public class mainScreenGUI {
     Board board;
     Controller controller;
+    LeaderboardGUI leaderboard;
 
     public JFrame frame;
     JPanel mainPanel;
@@ -24,9 +25,10 @@ public class mainScreenGUI {
     JButton newGameButton;
     JButton leaderboardButton;
 
-    public mainScreenGUI(Board board, Controller controller){
+    public mainScreenGUI(Board board, Controller controller, LeaderboardGUI leaderboard){
         this.board = board;
         this.controller = controller;
+        this.leaderboard = leaderboard;
 
         frame = new JFrame("2048");
         frame.setPreferredSize(new Dimension(500, 640));
@@ -50,11 +52,11 @@ public class mainScreenGUI {
         newGameButton.setBounds(250, 132, 108, 36);
         
         URL leaderboardPNG = this.getClass().getClassLoader().getResource("Leaderboard.png");
-        ImageIcon leaderboard = new ImageIcon(leaderboardPNG);
-        Image temp2 = leaderboard.getImage() ;  
+        ImageIcon leaderboardIMG = new ImageIcon(leaderboardPNG);
+        Image temp2 = leaderboardIMG.getImage() ;  
         Image newimg2 = temp2.getScaledInstance(108, 36, java.awt.Image.SCALE_SMOOTH);  
-        leaderboard = new ImageIcon(newimg2);
-        leaderboardButton = new JButton(leaderboard);
+        leaderboardIMG = new ImageIcon(newimg2);
+        leaderboardButton = new JButton(leaderboardIMG);
         leaderboardButton.setBounds(375, 132, 108, 36);
         
         URL logoPNG = this.getClass().getClassLoader().getResource("LogoIcon.png");
@@ -116,5 +118,9 @@ public class mainScreenGUI {
 
     public void addLeaderboardListener(ActionListener l){
         leaderboardButton.addActionListener(l);
+    }
+
+    public void addBackListener(ActionListener l){
+        leaderboard.back.addActionListener(l);
     }
 }

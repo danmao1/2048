@@ -34,8 +34,7 @@ public class Controller implements KeyListener{
         board.addTile();
     }
 
-    public void showLeaderboard(){
-	    LeaderboardGUI leaderboard = new LeaderboardGUI();
+    public void showLeaderboard(LeaderboardGUI leaderboard){
 	    leaderboard.frame.setVisible(true);
     }
 

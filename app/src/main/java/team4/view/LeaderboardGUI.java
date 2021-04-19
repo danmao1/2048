@@ -151,11 +151,4 @@ public class LeaderboardGUI {
         
         frame.pack();
     }
-
-
-    public void addBackListener(ActionListener l){
-        back.addActionListener(l);
-    }
-
-
 }
