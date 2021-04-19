@@ -42,7 +42,6 @@ public class Controller implements KeyListener, UserInterface{
 	    leaderboard.frame.setVisible(true);
     }
 
-<<<<<<< HEAD
 	public void leaderboardCalculation(int score) {
 		ArrayList<String> leader= new ArrayList<String> ();
 		try {
@@ -76,12 +75,12 @@ public class Controller implements KeyListener, UserInterface{
 
 		
 		
-=======
+
     public void showMainScreen(mainScreenGUI ui){
         ui.frame.setVisible(true);
     }
     
->>>>>>> 03b56881ef5b9a96bafa6bd9218059797cb1bd2a
+
     @Override
     public void keyReleased(KeyEvent e){
 
