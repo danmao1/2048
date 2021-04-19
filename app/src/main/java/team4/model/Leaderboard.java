@@ -6,7 +6,9 @@ import java.net.URL;
 
 public class Leaderboard {
     
-	/*
+    public Leaderboard(){
+	}
+	
 	public void leaderboardCalculation(int score) {
 		ArrayList<String> leader= new ArrayList<String> ();
 		try {
@@ -34,5 +36,5 @@ public class Leaderboard {
 		 }
 			 
 		}
-		*/
+		
 }
