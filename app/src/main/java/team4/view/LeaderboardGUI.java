@@ -154,8 +154,6 @@ public class LeaderboardGUI {
         frame.pack();
         frame.setVisible(true);
     }
-    public static void main(String args[]){
-       LeaderboardGUI leaderboard= new LeaderboardGUI();
-   }    
+      
 
 }
