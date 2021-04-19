@@ -35,7 +35,7 @@ public class Driver {
         ui.addBackListener(
             new ActionListener(){
                 public void actionPerformed(ActionEvent e){
-                    controller.showMainScreen(ui);
+                    leaderboard.dispose();
                     board.requestFocusInWindow();
                 }
             }
