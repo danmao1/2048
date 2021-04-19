@@ -9,9 +9,10 @@ import java.io.*;
 import java.net.URL;
 
 
-public class Controller implements KeyListener, UserInterface{
-    Board board;
-    Moves mover;
+public class Controller implements KeyListener{
+    protected Board board;
+    protected Moves mover;
+    protected UserInterface ui; 
 
     public Controller(Board board){
         this.board = board;
