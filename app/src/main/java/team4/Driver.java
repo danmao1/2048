@@ -14,19 +14,22 @@ public class Driver {
         board.requestFocusInWindow();
         board.addKeyListener(controller);
 
-        /*
+        
         ui.addNewGameListener(
             new ActionListener(){
                 public void actionPerformed(ActionEvent e){
                     controller.startNewGame();
+                    board.requestFocusInWindow();
                 }
             }
         );
 
+        /*
         ui.addLeaderboardListener(
             new ActionListener(){
                 public void actionPerformed(ActionEvent e){
                     controller.
+                    board.requestFocusInWindow();
                 }
             }
         );

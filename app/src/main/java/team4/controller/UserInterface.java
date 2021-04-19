@@ -3,5 +3,5 @@ import model.*;
 import view.*;
 
 public interface UserInterface {
-    public void leaderboardCalculation(); 
+    public void leaderboardCalculation(int score); 
 }

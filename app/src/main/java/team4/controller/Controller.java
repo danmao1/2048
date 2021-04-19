@@ -18,10 +18,9 @@ public class Controller implements KeyListener{
     }
 
     public void startNewGame(){
-        //board.reset();
+        board.reset();
         board.addTile();
     }
-    
 
     @Override
     public void keyPressed(KeyEvent e){
@@ -36,6 +35,8 @@ public class Controller implements KeyListener{
         }
         board.addTile();
     }
+
+
 	/*public void leaderboardCalculation(int score) {
 		ArrayList<String> leader= new ArrayList<String> ();
 		URL text = this.getClass().getClassLoader().getResource("scores.txt");
