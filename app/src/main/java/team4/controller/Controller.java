@@ -4,10 +4,6 @@ import view.*;
 
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
-import java.util.*;
-import java.io.*;
-import java.net.URL;
-
 
 public class Controller implements KeyListener{
     protected Board board;
@@ -47,7 +43,6 @@ public class Controller implements KeyListener{
         ui.frame.setVisible(true);
     }
     
-
     @Override
     public void keyReleased(KeyEvent e){
 
@@ -57,6 +52,4 @@ public class Controller implements KeyListener{
     public void keyTyped(KeyEvent e){
         
     }
-
-    
 }
