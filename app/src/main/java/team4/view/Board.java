@@ -100,16 +100,4 @@ public class Board extends JPanel{
         }
         return true;
     }
-
-    /*
-    public void reset(){
-        nums = new Tile[row][col];
-
-        for(int i = 0; i < row; i++){
-            for(int j = 0; j < col; j++){
-                nums[i][j].setValue(0);
-            }
-        }
-    }
-    */
 }

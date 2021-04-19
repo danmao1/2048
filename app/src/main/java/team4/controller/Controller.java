@@ -9,7 +9,7 @@ import java.io.*;
 import java.net.URL;
 
 
-public class Controller implements KeyListener{
+public class Controller implements KeyListener, UserInterface{
     Board board;
     Moves mover;
 
@@ -37,7 +37,12 @@ public class Controller implements KeyListener{
         board.addTile();
     }
 
+    public void showLeaderboard(){
+	    LeaderboardGUI leaderboard = new LeaderboardGUI();
+	    leaderboard.frame.setVisible(true);
+    }
 
+<<<<<<< HEAD
 	public void leaderboardCalculation(int score) {
 		ArrayList<String> leader= new ArrayList<String> ();
 		try {
@@ -71,6 +76,12 @@ public class Controller implements KeyListener{
 
 		
 		
+=======
+    public void showMainScreen(mainScreenGUI ui){
+        ui.frame.setVisible(true);
+    }
+    
+>>>>>>> 03b56881ef5b9a96bafa6bd9218059797cb1bd2a
     @Override
     public void keyReleased(KeyEvent e){
 
