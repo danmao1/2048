@@ -8,8 +8,8 @@ import java.awt.*;
 public class BoardGUI extends JPanel{
     public Board board;
 
-    public BoardGUI(){
-        board = new Board();
+    public BoardGUI(Board board){
+        this.board = board;
 
         this.setLayout(new GridLayout(board.row, board.col));
         board.nums = new Tile[board.row][board.col];

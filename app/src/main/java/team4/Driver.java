@@ -6,11 +6,11 @@ import controller.*;
 import java.awt.event.*;
 public class Driver {
     public static void main(String args[]){
-        BoardGUI boardGUI = new BoardGUI();
-        LeaderboardGUI leaderboard = new LeaderboardGUI();
         Board board = new Board();
+        BoardGUI boardGUI = new BoardGUI(board);
+        LeaderboardGUI leaderboard = new LeaderboardGUI();
         Controller controller = new Controller(board);
-        mainScreenGUI ui = new mainScreenGUI(boardGUI, controller, leaderboard);
+        mainScreenGUI ui = new mainScreenGUI(controller, boardGUI, leaderboard);
         
         boardGUI.setFocusable(true);
         boardGUI.requestFocusInWindow();

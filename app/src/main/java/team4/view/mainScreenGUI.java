@@ -9,7 +9,7 @@ import java.net.URL;
 
 
 public class mainScreenGUI {
-    BoardGUI board;
+    BoardGUI boardGUI;
     Controller controller;
     LeaderboardGUI leaderboard;
 
@@ -25,9 +25,9 @@ public class mainScreenGUI {
     JButton newGameButton;
     JButton leaderboardButton;
 
-    public mainScreenGUI(BoardGUI board, Controller controller, LeaderboardGUI leaderboard){
-        this.board = board;
+    public mainScreenGUI(Controller controller, BoardGUI boardGUI, LeaderboardGUI leaderboard){
         this.controller = controller;
+        this.boardGUI = boardGUI;
         this.leaderboard = leaderboard;
 
         frame = new JFrame("2048");
@@ -103,8 +103,8 @@ public class mainScreenGUI {
         menuPanel.setBounds(0, 0, 500, 208);
         mainPanel.add(menuPanel);
 
-        board.setBounds(53, 208, 392, 392);
-        mainPanel.add(board);
+        boardGUI.setBounds(53, 208, 392, 392);
+        mainPanel.add(boardGUI);
 
         frame.add(mainPanel);
 
