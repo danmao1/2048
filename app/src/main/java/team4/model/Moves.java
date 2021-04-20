@@ -92,3 +92,137 @@ public class Moves {
         board.update();
     }
 }
+
+/*
+    /*
+    public void upAll(){
+        for(int x = 0; x < 4; x++){
+            for(int y = 1; y < 4; y++){
+                this.up(x, y);
+            }
+        }
+    }
+ 
+    public void downAll(){
+        for(int x = 0; x < 4; x++){
+            for(int y =2; y >= 0; y--){
+                this.down(x, y);
+            }
+        }
+    }
+ 
+    public void rightAll(){
+        for(int y = 0; y < 4; y++){
+            for(int x = 1; x < 4; x++){
+                this.right(x, y);
+            }
+        }
+    }
+ 
+    public void leftAll(){
+        for(int y = 0; y < 4; y++){
+            for(int x =2; x >= 0; x--){
+                this.left(x, y);
+            }
+        }
+    }
+ 
+    public void up(int x, int y){
+        while(y != 0){
+            if(board.getValue(y, x) == 0){
+                break;
+            }
+            if(board.getValue(y - 1, x) == 0){
+                value = board.getValue(x, y);
+                board.setValue(value, y - 1, x);
+                board.setValue(0, y, x);
+                y--;
+            }
+            if(board.getValue(y - 1, x) == board.getValue(y, x)){
+                value = board.getValue(x, y - 1);
+                board.setValue(value * 2, y - 1, x);
+                board.setValue(0, y, x);
+                y--;
+                
+                if(board.getValue(y - 1, x) == board.getValue(y, x)){
+                    break;
+                }
+            }
+            if(board.getValue(y - 1, x) != board.getValue(y, x) && board.getValue(y - 1, x) != 0){
+                break;
+            }
+        }
+    }
+ 
+    public void down(int x, int y){
+        while(y != 3){
+            if(board[y][x] == 0){
+                break;
+            }
+            if(board[y+1][x] == 0){
+                board[y+1][x] = board[x][y];
+                board[y][x] = 0;
+                y++;
+            }
+            if(board[y+1][x].getValue() == board[y][x].getValue()){
+                board[y+1][x] = board[x][y+1].getValue() * 2;
+                board[y][x] = 0;
+                y++;
+                if(board[y+1][x].getValue() == board[y][x].getValue()){
+                    break;
+                }
+            }
+            if(board[y+1][x].getValue() != board[y][x].getValue() && board[y+1][x].getValue() != 0){
+                break;
+            }
+        }
+    }
+ 
+    public void right(int x, int y){
+        while(x != 0){
+            if(board[y][x] == 0){
+                break;
+            }
+            if(board[y][x-1] == 0){
+                board[y][x-1] = board[x][y];
+                board[y][x] = 0;
+                x--;
+            }
+            if(board[y][x-1].getValue() == board[y][x].getValue()){
+                board[y][x-1] = board[y][x-1].getValue() * 2;
+                board[y][x] = 0;
+                x--;
+                if(board[y][x-1].getValue() == board[y][x].getValue()){
+                    break;
+                }
+            }
+            if(board[y][x-1].getValue() != board[y][x].getValue() && board[y][x-1].getValue() != 0){
+                break;
+            }
+        }
+    }
+ 
+    public void left(int x, int y){
+        while(x != 3){
+            if(board[y][x] == 0){
+                break;
+            }
+            if(board[y][x+1] == 0){
+                board[y][x+1] = board[x][y];
+                board[y][x] = 0;
+                x++;
+            }
+            if(board[y][x+1].getValue() == board[x][y].getValue()){
+                board[y][x+1] = board[y][x+1].getValue() * 2;
+                board[y][x] = 0;
+                x++;
+                if(board[y][x+1].getValue() == board[y][x].getValue()){
+                    break;
+                }
+            }
+            if(board[y][x+1].getValue() != board[y][x].getValue() && board[y][x+1].getValue() != 0){
+                break;
+            }
+        }
+    }
+    */
