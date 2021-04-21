@@ -1,9 +1,9 @@
 package view;
 import model.*;
 import controller.*;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 import java.net.URL;
 
 public class LeaderboardGUI {
@@ -33,7 +33,7 @@ public class LeaderboardGUI {
     JLabel fourthScore;
     JLabel fifthScore;
     
-    
+    Leaderboard leaderboard = new Leaderboard();
     
 
     public LeaderboardGUI(){

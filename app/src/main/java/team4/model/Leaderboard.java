@@ -9,32 +9,35 @@ public class Leaderboard {
     public Leaderboard(){
 	}
 	
-	public void leaderboardCalculation(int score) {
-		ArrayList<String> leader= new ArrayList<String> ();
+	public void leaderboardCalculation(int currentScore) {
+		ArrayList<String> topScores = new ArrayList<String> ();
 		try {
 			File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
 			BufferedReader br = new BufferedReader(new FileReader(file)); 
 			FileWriter fw = new FileWriter(file);
 			BufferedWriter bw = new BufferedWriter(fw);
-			String scores, temp; 
-			int j=0;
-			while ((scores = br.readLine()) != null){
-					int i=Integer.parseInt(scores);
-					if (score>i) {
-						String newleader= String.valueOf(score);
-						leader.add(newleader);
+			String score; 
+
+			int j = 0;
+			while((score = br.readLine()) != null){
+					int i = Integer.parseInt(score);
+					if(currentScore > i){
+						String newleader = String.valueOf(currentScore);
+						topScores.add(newleader);
 					}
-					leader.add(scores);
-				}
-			while ((scores = br.readLine()) != null){
-					bw.write(leader.get(j));
-					j++;
-				}
+					topScores.add(score);
 			}
-		 catch (IOException e) {
-			 e.getMessage();
-		 }
-			 
+
+			while((score = br.readLine()) != null){
+					bw.write(topScores.get(j));
+					j++;
+			}
+
+			br.close();
+			bw.close();
+		}catch(IOException e){
+			e.getMessage();
 		}
-		
+			 
+	}	
 }

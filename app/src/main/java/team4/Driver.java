@@ -8,9 +8,9 @@ public class Driver {
     public static void main(String args[]){
         Board board = new Board();
         BoardGUI boardGUI = new BoardGUI(board);
-        LeaderboardGUI leaderboard = new LeaderboardGUI();
+        LeaderboardGUI leaderboardGUI = new LeaderboardGUI();
         Controller controller = new Controller(board);
-        mainScreenGUI ui = new mainScreenGUI(controller, boardGUI, leaderboard);
+        mainScreenGUI ui = new mainScreenGUI(controller, boardGUI, leaderboardGUI);
         
         boardGUI.setFocusable(true);
         boardGUI.requestFocusInWindow();
@@ -28,7 +28,7 @@ public class Driver {
         ui.addLeaderboardListener(
             new ActionListener(){
                 public void actionPerformed(ActionEvent e){
-                    controller.showLeaderboard(leaderboard);
+                    controller.showLeaderboard(leaderboardGUI);
                 }
             }
         );
@@ -36,7 +36,7 @@ public class Driver {
         ui.addBackListener(
             new ActionListener(){
                 public void actionPerformed(ActionEvent e){
-                    controller.showMainScreen(leaderboard);
+                    controller.showMainScreen(leaderboardGUI);
                     boardGUI.requestFocusInWindow();
                 }
             }

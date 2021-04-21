@@ -5,8 +5,8 @@ import view.*;
 import java.util.Random;
 
 public class Board {
-    public static final int row = 4;
-    public static final int col = 4;
+    public final int row = 4;
+    public final int col = 4;
     
     public Tile nums[][];
 

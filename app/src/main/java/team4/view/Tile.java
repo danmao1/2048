@@ -1,6 +1,4 @@
 package view;
-import model.*;
-import controller.*;
 
 import javax.swing.*;
 import java.awt.*;
