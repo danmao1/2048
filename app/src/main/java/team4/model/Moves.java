@@ -11,9 +11,9 @@ public class Moves {
     }
     
     public void up(){
-        for(int row = 1; row < 4; row++){
+        for(int col = 0; col < 4; col++){
             result = 0;
-            for(int col = 0; col < 4; col++){
+            for(int row = 1; row < 4; row++){
                 if(result == row || board.getValue(row, col) == 0){
                     continue;
                 }else if(board.getValue(row, col) == board.getValue(result, col)){
@@ -37,6 +37,28 @@ public class Moves {
     }
 
     public void down(){
+        for(int col = 0; col < 4; col++){
+            result = 3;
+            for(int row = 3; row >= 0; row--){
+                if(result == row || board.getValue(row, col) == 0){
+                    continue;
+                }else if(board.getValue(row, col) == board.getValue(result, col)){
+                    value = board.getValue(result, col);
+                    board.setValue(value * 2, result, col);
+                    board.setValue(0, row, col);
+                    result--;
+                }else{
+                    if(board.getValue(result, col) != 0){
+                        result--;
+                    }
+                    if(result != row){
+                        value = board.getValue(row, col);
+                        board.setValue(value, result, col);
+                        board.setValue(0, row, col);
+                    }
+                }
+            }
+        }
         board.update();
     }
 
@@ -44,7 +66,7 @@ public class Moves {
         for(int row = 0; row < 4; row++){
             result = 0;
             for(int col = 1; col < 4; col++){
-                if(result == row || board.getValue(row, col) == 0){
+                if(result == col || board.getValue(row, col) == 0){
                     continue;
                 }else if(board.getValue(row, col) == board.getValue(row, result)){
                     value = board.getValue(row, result);
@@ -55,7 +77,7 @@ public class Moves {
                     if(board.getValue(row, result) != 0){
                         result++;
                     }
-                    if(result != row){
+                    if(result != col){
                         value = board.getValue(row, col);
                         board.setValue(value, row, result);
                         board.setValue(0, row, col);
@@ -81,7 +103,7 @@ public class Moves {
                     if(board.getValue(row, result) != 0){
                         result--;
                     }
-                    if(result != row){
+                    if(result != col){
                         value = board.getValue(row, col);
                         board.setValue(value, row, result);
                         board.setValue(0, row, col);
