@@ -5,12 +5,12 @@ import controller.*;
 import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
-
+import java.util.*;
+import java.io.*;
 public class LeaderboardGUI {
     
     public JFrame frame;
     JPanel mainPanel;
-
     JLabel title;
 
     int width = 180;
@@ -32,11 +32,26 @@ public class LeaderboardGUI {
     JLabel thirdScore;
     JLabel fourthScore;
     JLabel fifthScore;
+    ArrayList<String> scores;
     
     Leaderboard leaderboard = new Leaderboard();
     
 
     public LeaderboardGUI(){
+		try{
+		File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
+		scores = new ArrayList<String> ();
+		BufferedReader br = new BufferedReader(new FileReader(file)); 
+		String score;
+		
+		while((score = br.readLine()) != null){
+			scores.add(score);
+			}
+		}
+		catch (IOException e) {
+			e.getMessage();
+		}
+			 
         frame = new JFrame("2048 Leaderboard");
         frame.setPreferredSize(new Dimension(500, 640));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -70,31 +85,31 @@ public class LeaderboardGUI {
         title.setBounds(xCoord -85 , (yCoord) -110, width+250, height);
         mainPanel.add(title);
         
-        best = new JLabel("2048");
+        best = new JLabel(scores.get(0));
         best.setFont(new Font("Sans Serif", Font.PLAIN, 23));
         best.setForeground(Color.BLACK);
         best.setBounds(xCoord + 65, (yCoord), width, height);
         mainPanel.add(best);
         
-        secondScore= new JLabel("2000");
+        secondScore= new JLabel(scores.get(1));
         secondScore.setFont(new Font("Sans Serif", Font.PLAIN, 23));
         secondScore.setForeground(Color.BLACK);
         secondScore.setBounds(xCoord + 65, (yCoord)+74, width, height);
         mainPanel.add(secondScore);
         
-        thirdScore = new JLabel("1500");
+        thirdScore = new JLabel(scores.get(2));
         thirdScore.setFont(new Font("Sans Serif", Font.PLAIN, 23));
         thirdScore.setForeground(Color.BLACK);
         thirdScore.setBounds(xCoord + 65, (yCoord)+74 * 2, width, height);
         mainPanel.add(thirdScore);
         
-        fourthScore = new JLabel("900");
+        fourthScore = new JLabel(scores.get(3));
         fourthScore.setFont(new Font("Sans Serif", Font.PLAIN, 23));
         fourthScore.setForeground(Color.BLACK);
         fourthScore.setBounds(xCoord + 65, (yCoord)+74 * 3, width, height);
         mainPanel.add(fourthScore);
         
-        fifthScore = new JLabel("900");
+        fifthScore = new JLabel(scores.get(4));
         fifthScore.setFont(new Font("Sans Serif", Font.PLAIN, 23));
         fifthScore.setForeground(Color.BLACK);
         fifthScore.setBounds(xCoord + 65, (yCoord)+74 * 4, width, height);
