@@ -2,6 +2,8 @@ package view;
 import model.*;
 import controller.*;
 
+import java.util.*;
+import java.io.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -24,6 +26,7 @@ public class mainScreenGUI {
     JLabel goalBanner;
     JButton newGameButton;
     JButton leaderboardButton;
+    String best;
 
     public mainScreenGUI(Controller controller, BoardGUI boardGUI, LeaderboardGUI leaderboard){
         this.controller = controller;
@@ -76,8 +79,21 @@ public class mainScreenGUI {
         scoreImageLabel = new JLabel(scoreScaled);
         scoreImageLabel.setBounds(250, 18, 108, 108);
         menuPanel.add(scoreImageLabel);
+		try {
+			File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
+				
+			BufferedReader br = new BufferedReader(new FileReader(file)); 
+				
+				
+			best=br.readLine(); 
+		}
+		catch (IOException e) {
+			e.getMessage();
+		}
 
-        bestScoreLabel = new JLabel("20953");
+	
+		
+        bestScoreLabel = new JLabel(best);
         bestScoreLabel.setForeground(Color.white);
         bestScoreLabel.setBounds(415, 70, 100, 30);
         menuPanel.add(bestScoreLabel);
