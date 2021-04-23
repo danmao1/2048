@@ -2,12 +2,14 @@ package model;
 
 public class Moves {
     Board board;
+    Score score;
 
     int value;
     int result;
 
-    public Moves(Board board){
+    public Moves(Board board, Score score){
         this.board = board;
+        this.score = score;
     }
     
     public void up(){
@@ -20,6 +22,7 @@ public class Moves {
                     value = board.getValue(result, col);
                     board.setValue(value * 2, result, col);
                     board.setValue(0, row, col);
+                    score.update(value * 2);
                     result++;
                 }else{
                     if(board.getValue(result, col) != 0){
@@ -46,6 +49,7 @@ public class Moves {
                     value = board.getValue(result, col);
                     board.setValue(value * 2, result, col);
                     board.setValue(0, row, col);
+                    score.update(value * 2);
                     result--;
                 }else{
                     if(board.getValue(result, col) != 0){
@@ -72,6 +76,7 @@ public class Moves {
                     value = board.getValue(row, result);
                     board.setValue(value * 2, row, result);
                     board.setValue(0, row, col);
+                    score.update(value * 2);
                     result++;
                 }else{
                     if(board.getValue(row, result) != 0){
@@ -98,6 +103,7 @@ public class Moves {
                     value = board.getValue(row, result);
                     board.setValue(value * 2, row, result);
                     board.setValue(0, row, col);
+                    score.update(value * 2);
                     result--;
                 }else{
                     if(board.getValue(row, result) != 0){

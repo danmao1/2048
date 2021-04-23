@@ -7,9 +7,10 @@ import java.awt.event.*;
 public class Driver {
     public static void main(String args[]){
         Board board = new Board();
+        Score score = new Score();
         BoardGUI boardGUI = new BoardGUI(board);
         LeaderboardGUI leaderboardGUI = new LeaderboardGUI();
-        Controller controller = new Controller(board);
+        Controller controller = new Controller(board, score);
         mainScreenGUI ui = new mainScreenGUI(controller, boardGUI, leaderboardGUI);
         
         boardGUI.setFocusable(true);

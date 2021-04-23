@@ -7,16 +7,23 @@ import java.awt.event.KeyEvent;
 
 public class Controller implements KeyListener{
     protected Board board;
+    protected Score score;
     protected Moves mover;
     protected UserInterface ui; 
 
-    public Controller(Board board){
+    public Controller(Board board, Score score){
         this.board = board;
-        mover = new Moves(board);
+        this.score = score;
+        mover = new Moves(board, score);
+    }
+
+    public int getScore(){
+        return score.getScore();
     }
 
     public void startNewGame(){
         board.reset();
+        score.reset();
         board.addTile();
     }
 

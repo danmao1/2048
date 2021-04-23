@@ -79,6 +79,12 @@ public class mainScreenGUI {
         scoreImageLabel = new JLabel(scoreScaled);
         scoreImageLabel.setBounds(250, 18, 108, 108);
         menuPanel.add(scoreImageLabel);
+
+        scoreLabel = new JLabel(Integer.toString(controller.getScore()));
+        scoreLabel.setBounds(303, 66, 80, 30);
+        menuPanel.add(scoreLabel);
+
+
 		try {
 			File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
 				
