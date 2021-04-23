@@ -127,7 +127,21 @@ public class mainScreenGUI {
         frame.pack();
         frame.setVisible(true);
     }
-
+	public void putBestScore(){
+		try {
+			File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
+				
+			BufferedReader br = new BufferedReader(new FileReader(file)); 
+				
+				
+			best=br.readLine(); 
+		}
+		catch (IOException e) {
+			e.getMessage();
+		}
+		bestScoreLabel.setText(best);
+	}
+		
     public void addNewGameListener(ActionListener l){
         newGameButton.addActionListener(l);
     }
