@@ -1,21 +1,27 @@
 package model;
 
+import view.*;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class BoardTest {
     public Board board;
+    public BoardGUI gui;
 	public int count;
     
     @Test
     public void setValueTest(){
         board = new Board();
+        gui = new BoardGUI(board);
         board.setValue(8, 2, 1);
         assertTrue("Value should be 8", board.getValue(2,1) == 8);
     }
 
     @Test
     public void resetTest(){
+        board = new Board();
+        gui = new BoardGUI(board);
         board.setValue(2, 0, 1);
         board.setValue(4, 1, 1);
         board.setValue(8, 3, 2);
@@ -33,12 +39,16 @@ public class BoardTest {
 
     @Test
     public void isEmptyTest(){
+        board = new Board();
+        gui = new BoardGUI(board);
         boolean flag = board.isEmpty();
         assertTrue("There should be no tiles present", flag);
     }
 
     @Test
     public void isFilledTest(){
+        board = new Board();
+        gui = new BoardGUI(board);
         board.setValue(2, 0, 0);
         board.setValue(4, 1, 0);
         board.setValue(8, 2, 0);
@@ -62,6 +72,8 @@ public class BoardTest {
 
     @Test
     public void addTileWhenEmptyTest(){
+        board = new Board();
+        gui = new BoardGUI(board);
         board.addTile();
 
         count = 0;
@@ -77,6 +89,8 @@ public class BoardTest {
 
     @Test
     public void addTileDuringTest(){
+        board = new Board();
+        gui = new BoardGUI(board);
         board.addTile();
         board.addTile();
 
