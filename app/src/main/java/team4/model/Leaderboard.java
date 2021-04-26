@@ -9,11 +9,11 @@ public class Leaderboard {
     public Leaderboard(){
 	}
 	
-	public void leaderboardCalculation(int currentScore) {
+	public void leaderboardCalculation(int currentScore, String fileName ) {
 		
 		try {
 			ArrayList<String> topScores = new ArrayList<String> ();
-			File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
+			File file = new File(getClass().getClassLoader().getResource(fileName).getFile());
 			
 			BufferedReader br = new BufferedReader(new FileReader(file)); 
 			
