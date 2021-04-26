@@ -5,21 +5,11 @@ import static org.junit.Assert.*;
 
 public class BoardTest {
     public Board board;
-    //public BoardGUI gui;
 	public int count;
-
-    /*
-    @Before
-    public void setUp(){
-        board = new Board();
-        gui = BoardGUI(board);
-    }
-    */
     
     @Test
     public void setValueTest(){
         board = new Board();
-        //gui = BoardGUI(board);
         board.setValue(8, 2, 1);
         assertTrue("Value should be 8", board.getValue(2,1) == 8);
     }
