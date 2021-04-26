@@ -35,4 +35,24 @@ public class BoardTest {
         }
         assertEquals("The entire board value should be 0", 0, count);
     }
+
+    @Test
+    public void isEmptyTest(){
+
+    }
+
+    @Test
+    public void isFilledTest(){
+
+    }
+
+    @Test
+    public void addTileWhenEmptyTest(){
+
+    }
+
+    @Test
+    public void addTileDuringTest(){
+
+    }
 }
