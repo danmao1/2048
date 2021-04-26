@@ -1,35 +1,38 @@
 package model;
 
-
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class BoardTest {
-    private Board board;
-	private int count;
-    
+    public Board board;
+    //public BoardGUI gui;
+	public int count;
 
+    /*
+    @Before
+    public void setUp(){
+        board = new Board();
+        gui = BoardGUI(board);
+    }
+    */
+    
     @Test
     public void setValueTest(){
-		board = new Board();
+        board = new Board();
+        //gui = BoardGUI(board);
         board.setValue(8, 2, 1);
         assertTrue("Value should be 8", board.getValue(2,1) == 8);
     }
 
     @Test
     public void resetTest(){
-		board = new Board();
         board.setValue(2, 0, 1);
         board.setValue(4, 1, 1);
         board.setValue(8, 3, 2);
         board.setValue(16, 2, 0);
         board.reset();
         
-<<<<<<< HEAD:app/src/test/java/team4/model /BoardTest.java
-        
-=======
-        int count = 0;
->>>>>>> 1357014c6e6677aa4666f6812fdb47fbfe14ae76:app/src/test/java/team4/model/BoardTest.java
+        count = 0;
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
                 count += board.getValue(i, j);
@@ -71,7 +74,7 @@ public class BoardTest {
     public void addTileWhenEmptyTest(){
         board.addTile();
 
-        int count = 0;
+        count = 0;
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
                 if(board.getValue(i, j) != 0){
@@ -87,7 +90,7 @@ public class BoardTest {
         board.addTile();
         board.addTile();
 
-        int count = 0;
+        count = 0;
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
                 if(board.getValue(i, j) != 0){

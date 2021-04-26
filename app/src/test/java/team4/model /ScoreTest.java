@@ -1,28 +1,25 @@
-import org.junit.Test;
-import org.junit.Assert.*;
+package model;
 
-import jdk.jfr.Timestamp;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class ScoreTest {
-
-    @Before
-    public void setUp(){
-        Score score = new Score();
-    }
-    
     @Test
     public void testInitValue(){
+        Score score = new Score();
         assertEquals("Initial value after instatiation should be set to zero", 0, score.getScore());
     }
 
     @Test
     public void testUpdate(){
+        Score score = new Score();
         score.update(16);
         assertEquals("Current score should be updated to 16", 16, score.getScore());
     }
 
     @Test 
     public void testReset(){
+        Score score = new Score();
         score.update(4);
         score.reset();
         assertEquals("Current score should be reset to 0", 0, score.getScore());
