@@ -27,7 +27,7 @@ public class BoardTest {
         board.setValue(16, 2, 0);
         board.reset();
         
-        int count;
+        int count = 0;
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
                 count += board.getValue(i, j);
@@ -38,21 +38,61 @@ public class BoardTest {
 
     @Test
     public void isEmptyTest(){
-
+        boolean flag = board.isEmpty();
+        assertTrue("There should be no tiles present", flag);
     }
 
     @Test
     public void isFilledTest(){
+        board.setValue(2, 0, 0);
+        board.setValue(4, 1, 0);
+        board.setValue(8, 2, 0);
+        board.setValue(16, 3, 0);
+        board.setValue(2, 0, 1);
+        board.setValue(4, 1, 1);
+        board.setValue(8, 2, 1);
+        board.setValue(16, 3, 1);
+        board.setValue(2, 0, 2);
+        board.setValue(4, 1, 2);
+        board.setValue(8, 2, 2);
+        board.setValue(16, 3, 2);
+        board.setValue(2, 0, 3);
+        board.setValue(4, 1, 3);
+        board.setValue(8, 2, 3);
+        board.setValue(16, 3, 3);
 
+        boolean flag = board.isFilled();
+        assertTrue("The board should be filled with tiles", flag);
     }
 
     @Test
     public void addTileWhenEmptyTest(){
+        board.addTile();
 
+        int count = 0;
+        for(int i = 0; i < 4; i++){
+            for(int j = 0; j < 4; j++){
+                if(board.getValue(i, j) != 0){
+                    count++;
+                }
+            }
+        }
+        assertEquals("There should be two tiles present at the start of the game", 2, count);
     }
 
     @Test
     public void addTileDuringTest(){
+        board.addTile();
+        board.addTile();
 
+        int count = 0;
+        for(int i = 0; i < 4; i++){
+            for(int j = 0; j < 4; j++){
+                if(board.getValue(i, j) != 0){
+                    count++;
+                }
+            }
+        }
+        assertEquals("There should be three tiles present", 3, count);
     }
 }
