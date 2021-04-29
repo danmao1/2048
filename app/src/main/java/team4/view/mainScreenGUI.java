@@ -10,7 +10,7 @@ import java.awt.event.*;
 import java.net.URL;
 
 
-public class mainScreenGUI {
+public class mainScreenGUI implements ScoreObserver{
     BoardGUI boardGUI;
     Controller controller;
     LeaderboardGUI leaderboard;
@@ -79,10 +79,12 @@ public class mainScreenGUI {
         scoreImageLabel = new JLabel(scoreScaled);
         scoreImageLabel.setBounds(250, 18, 108, 108);
 
+        /*
         scoreLabel = new JLabel(Integer.toString(controller.getScore()));
         scoreLabel.setForeground(Color.white);
         scoreLabel.setBounds(303, 66, 80, 30);
         menuPanel.add(scoreLabel);
+        */
 
         menuPanel.add(scoreImageLabel);
 
@@ -149,6 +151,24 @@ public class mainScreenGUI {
 		}
 		bestScoreLabel.setText(best);
 	}
+
+    @Override
+    public void update(Iterator<Integer> scoreIter)
+    {
+        while(scoreIter.hasNext())
+        {
+            int score = scoreIter.next();
+            System.out.println(score);
+            JLabel scoreLabel = new JLabel();
+            scoreLabel.setText(Integer.toString(score));
+            scoreLabel.setForeground(Color.white);
+            scoreLabel.setBounds(303, 66, 80, 30);
+            menuPanel.add(scoreLabel);
+        }
+
+        menuPanel.revalidate();
+        menuPanel.repaint();
+    }
 		
     public void addNewGameListener(ActionListener l){
         newGameButton.addActionListener(l);

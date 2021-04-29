@@ -7,7 +7,7 @@ import java.awt.event.*;
 public class Driver {
     public static void main(String args[]){
         Board board = new Board();
-        Score score = new Score();
+        ObservableScore score = new ObservableScore();
         BoardGUI boardGUI = new BoardGUI(board);
         LeaderboardGUI leaderboardGUI = new LeaderboardGUI();
         Controller controller = new Controller(board, score);
@@ -45,5 +45,6 @@ public class Driver {
         );
         
         controller.startNewGame();
+        score.addScoreObserver(ui);
     }
 }
