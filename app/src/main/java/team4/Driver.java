@@ -8,9 +8,10 @@ public class Driver {
     public static void main(String args[]){
         Board board = new Board();
         ObservableScore score = new ObservableScore();
+        Leaderboard leaderboard = new Leaderboard();
         BoardGUI boardGUI = new BoardGUI(board);
         LeaderboardGUI leaderboardGUI = new LeaderboardGUI();
-        Controller controller = new Controller(board, score);
+        Controller controller = new Controller(board, score, leaderboard);
         mainScreenGUI ui = new mainScreenGUI(controller, boardGUI, leaderboardGUI);
         
         boardGUI.setFocusable(true);

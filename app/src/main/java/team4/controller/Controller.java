@@ -6,14 +6,15 @@ import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
 
 public class Controller implements KeyListener{
-    protected Board board;
-    protected ObservableScore score;
-    protected Moves mover;
-    protected UserInterface ui; 
+    public Board board;
+    public ObservableScore score;
+    public Moves mover; 
+    public Leaderboard leaderboard;
 
-    public Controller(Board board, ObservableScore score){
+    public Controller(Board board, ObservableScore score, Leaderboard leaderboard){
         this.board = board;
         this.score = score;
+        this.leaderboard = leaderboard;
         mover = new Moves(board, score);
     }
 
@@ -22,6 +23,7 @@ public class Controller implements KeyListener{
     }
 
     public void startNewGame(){
+        leaderboard.leaderboardCalculation(score.currentScore);
         board.reset();
         score.reset();
         board.addTile();

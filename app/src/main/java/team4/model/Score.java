@@ -6,7 +6,7 @@ import java.util.Iterator;
 public class Score implements Iterable<Integer>{
 
     private ArrayList<Integer> scores;
-    int currentScore;
+    public int currentScore;
 
     public Score(){
         scores = new ArrayList<Integer>();

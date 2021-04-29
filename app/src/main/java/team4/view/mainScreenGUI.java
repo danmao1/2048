@@ -135,7 +135,7 @@ public class mainScreenGUI implements ScoreObserver{
         frame.pack();
         frame.setVisible(true);
     }
-    
+
 	public void putBestScore(){
 		try {
 			File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
@@ -160,8 +160,8 @@ public class mainScreenGUI implements ScoreObserver{
             scoreLabel.setText(Integer.toString(score));
         }
 
-        menuPanel.revalidate();
-        menuPanel.repaint();
+        //menuPanel.revalidate();
+        //menuPanel.repaint();
     }
 		
     public void addNewGameListener(ActionListener l){
