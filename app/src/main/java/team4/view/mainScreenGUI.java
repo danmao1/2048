@@ -78,13 +78,15 @@ public class mainScreenGUI {
         ImageIcon scoreScaled = new ImageIcon(newimg4);
         scoreImageLabel = new JLabel(scoreScaled);
         scoreImageLabel.setBounds(250, 18, 108, 108);
-        menuPanel.add(scoreImageLabel);
 
         scoreLabel = new JLabel(Integer.toString(controller.getScore()));
+        scoreLabel.setForeground(Color.white);
         scoreLabel.setBounds(303, 66, 80, 30);
         menuPanel.add(scoreLabel);
 
+        menuPanel.add(scoreImageLabel);
 
+        
 		try {
 			File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
 				
@@ -101,7 +103,7 @@ public class mainScreenGUI {
 		
         bestScoreLabel = new JLabel(best);
         bestScoreLabel.setForeground(Color.white);
-        bestScoreLabel.setBounds(415, 70, 100, 30);
+        bestScoreLabel.setBounds(426, 66, 80, 30);
         menuPanel.add(bestScoreLabel);
         
         URL bestScorePNG = this.getClass().getClassLoader().getResource("BestIcon.png");
