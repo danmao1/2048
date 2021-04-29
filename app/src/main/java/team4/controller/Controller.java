@@ -7,11 +7,11 @@ import java.awt.event.KeyEvent;
 
 public class Controller implements KeyListener{
     protected Board board;
-    protected Score score;
+    protected ObservableScore score;
     protected Moves mover;
     protected UserInterface ui; 
 
-    public Controller(Board board, Score score){
+    public Controller(Board board, ObservableScore score){
         this.board = board;
         this.score = score;
         mover = new Moves(board, score);

@@ -12,13 +12,12 @@ public class Score implements Iterable<Integer>{
         scores = new ArrayList<Integer>();
         currentScore = 0;
     }
-    
 
     public int getScore(){
         return currentScore;
     }
 
-    public void update(int value){
+    public void newScore(int value){
         currentScore += value;
     }
 
@@ -28,6 +27,7 @@ public class Score implements Iterable<Integer>{
 
     @Override 
     public Iterator<Integer> iterator(){
+        scores.add(currentScore);
         return scores.iterator();
     }
 }

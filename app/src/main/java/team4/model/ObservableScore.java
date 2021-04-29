@@ -27,9 +27,16 @@ public class ObservableScore extends Score
     }
 
     @Override 
-    public void update(int value)
+    public void newScore(int value)
     {
-        super.update(value);
+        super.newScore(value);
+        notifyObservers();
+    }
+
+    @Override 
+    public void reset()
+    {
+        super.reset();
         notifyObservers();
     }
 }

@@ -79,12 +79,10 @@ public class mainScreenGUI implements ScoreObserver{
         scoreImageLabel = new JLabel(scoreScaled);
         scoreImageLabel.setBounds(250, 18, 108, 108);
 
-        /*
         scoreLabel = new JLabel(Integer.toString(controller.getScore()));
         scoreLabel.setForeground(Color.white);
         scoreLabel.setBounds(303, 66, 80, 30);
         menuPanel.add(scoreLabel);
-        */
 
         menuPanel.add(scoreImageLabel);
 
@@ -158,12 +156,10 @@ public class mainScreenGUI implements ScoreObserver{
         while(scoreIter.hasNext())
         {
             int score = scoreIter.next();
+
             System.out.println(score);
-            JLabel scoreLabel = new JLabel();
+            
             scoreLabel.setText(Integer.toString(score));
-            scoreLabel.setForeground(Color.white);
-            scoreLabel.setBounds(303, 66, 80, 30);
-            menuPanel.add(scoreLabel);
         }
 
         menuPanel.revalidate();
