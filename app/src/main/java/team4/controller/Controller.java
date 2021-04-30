@@ -10,11 +10,13 @@ public class Controller implements KeyListener{
     public ObservableScore score;
     public Moves mover; 
     public Leaderboard leaderboard;
+    public UserInterface userInterface;
 
-    public Controller(Board board, ObservableScore score, Leaderboard leaderboard){
+    public Controller(Board board, ObservableScore score, Leaderboard leaderboard, UserInterface userInterface){
         this.board = board;
         this.score = score;
         this.leaderboard = leaderboard;
+        this.userInterface = userInterface;
         mover = new Moves(board, score);
     }
 
@@ -27,7 +29,6 @@ public class Controller implements KeyListener{
         board.reset();
         score.reset();
         board.addTile();
-        
     }
 
     @Override
@@ -42,6 +43,13 @@ public class Controller implements KeyListener{
             mover.down();
         }
         board.addTile();
+    }
+
+    public void onFinish(){
+        boolean playAgain = userInterface.playAgain();
+        if(playAgain){
+            this.startNewGame();
+        }
     }
 
     public void showLeaderboard(LeaderboardGUI leaderboard){

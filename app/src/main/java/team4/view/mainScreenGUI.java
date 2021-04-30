@@ -10,7 +10,7 @@ import java.awt.event.*;
 import java.net.URL;
 
 
-public class mainScreenGUI implements ScoreObserver{
+public class mainScreenGUI implements UserInterface, ScoreObserver{
     BoardGUI boardGUI;
     Controller controller;
     LeaderboardGUI leaderboard;
@@ -159,9 +159,11 @@ public class mainScreenGUI implements ScoreObserver{
             int score = scoreIter.next();
             scoreLabel.setText(Integer.toString(score));
         }
+    }
 
-        //menuPanel.revalidate();
-        //menuPanel.repaint();
+    public boolean playAgain(){
+        int choice = JOptionPane.showConfirmDialog(frame, "You Won! Play again?", "Results", JOptionPane.YES_NO_OPTION);
+        return choice == JOptionPane.YES_OPTION;
     }
 		
     public void addNewGameListener(ActionListener l){
