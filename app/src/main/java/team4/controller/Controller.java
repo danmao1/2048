@@ -57,6 +57,8 @@ public class Controller implements KeyListener{
         boolean playAgain = userInterface.playAgain();
         if(playAgain){
             this.startNewGame();
+        }else{
+            ui.requestFocusInWindow();
         }
     }
 
