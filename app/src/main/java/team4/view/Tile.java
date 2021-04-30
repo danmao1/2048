@@ -59,8 +59,15 @@ public class Tile extends JComponent{
         
         g.fillRoundRect(5, 5, width-10, height-10, 40, 40);
         
-        g.setColor(Color.white);
-        g.drawString(Integer.toString(value), width/2, height/2);
+        if (value == 2 || value == 4){
+                g.setColor(Color.BLACK);
+        } else {
+                g.setColor(Color.WHITE);
+        }
+        
+        if (value != 0){
+                g.drawString(Integer.toString(value), width/2, height/2);
+        }
         
     }
 }
