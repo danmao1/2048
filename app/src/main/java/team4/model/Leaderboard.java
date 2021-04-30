@@ -12,12 +12,13 @@ public class Leaderboard {
 			ArrayList<String> topScores = new ArrayList<String>();
 			File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
 			BufferedReader br = new BufferedReader(new FileReader(file)); 
-			
+			boolean bool=true;
 			while((score = br.readLine()) != null){
 				int i = Integer.parseInt(score);
-				if(currentScore > i){
+				if(currentScore > i && bool){
 					String newleader = String.valueOf(currentScore);
 					topScores.add(newleader);
+					bool=false;
 				}
 				topScores.add(score);
 			}

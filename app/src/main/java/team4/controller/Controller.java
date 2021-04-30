@@ -23,10 +23,11 @@ public class Controller implements KeyListener{
     }
 
     public void startNewGame(){
-        leaderboard.leaderboardCalculation(score.currentScore);
+        leaderboard.leaderboardCalculation(getScore());
         board.reset();
         score.reset();
         board.addTile();
+        
     }
 
     @Override
