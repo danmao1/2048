@@ -12,7 +12,7 @@ import java.net.URL;
 
 public class mainScreenGUI implements UserInterface, ScoreObserver{
     BoardGUI boardGUI;
-    Controller controller;
+    ObservableScore score;
     LeaderboardGUI leaderboard;
 
     public JFrame frame;
@@ -28,8 +28,8 @@ public class mainScreenGUI implements UserInterface, ScoreObserver{
     JButton leaderboardButton;
     String best;
 
-    public mainScreenGUI(Controller controller, BoardGUI boardGUI, LeaderboardGUI leaderboard){
-        this.controller = controller;
+    public mainScreenGUI(ObservableScore score, BoardGUI boardGUI, LeaderboardGUI leaderboard){
+        this.score = score;
         this.boardGUI = boardGUI;
         this.leaderboard = leaderboard;
 
@@ -79,7 +79,7 @@ public class mainScreenGUI implements UserInterface, ScoreObserver{
         scoreImageLabel = new JLabel(scoreScaled);
         scoreImageLabel.setBounds(250, 18, 108, 108);
 
-        scoreLabel = new JLabel(Integer.toString(controller.getScore()));
+        scoreLabel = new JLabel(Integer.toString(score.getScore()));
         scoreLabel.setForeground(Color.white);
         scoreLabel.setBounds(303, 66, 80, 30);
         menuPanel.add(scoreLabel);

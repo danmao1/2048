@@ -12,7 +12,7 @@ public class Moves {
         this.score = score;
     }
     
-    public void up(){
+    public boolean up(){
         for(int col = 0; col < 4; col++){
             result = 0;
             for(int row = 1; row < 4; row++){
@@ -23,6 +23,9 @@ public class Moves {
                     board.setValue(value * 2, result, col);
                     board.setValue(0, row, col);
                     score.newScore(value * 2);
+                    if(board.checkForWin()){
+                        return true;
+                    }
                     result++;
                 }else{
                     if(board.getValue(result, col) != 0){
@@ -37,9 +40,10 @@ public class Moves {
             }
         }
         board.update();
+        return false;
     }
 
-    public void down(){
+    public boolean down(){
         for(int col = 0; col < 4; col++){
             result = 3;
             for(int row = 3; row >= 0; row--){
@@ -50,6 +54,9 @@ public class Moves {
                     board.setValue(value * 2, result, col);
                     board.setValue(0, row, col);
                     score.newScore(value * 2);
+                    if(board.checkForWin()){
+                        return true;
+                    }
                     result--;
                 }else{
                     if(board.getValue(result, col) != 0){
@@ -64,9 +71,10 @@ public class Moves {
             }
         }
         board.update();
+        return false;
     }
 
-    public void left(){
+    public boolean left(){
         for(int row = 0; row < 4; row++){
             result = 0;
             for(int col = 1; col < 4; col++){
@@ -77,6 +85,9 @@ public class Moves {
                     board.setValue(value * 2, row, result);
                     board.setValue(0, row, col);
                     score.newScore(value * 2);
+                    if(board.checkForWin()){
+                        return true;
+                    }
                     result++;
                 }else{
                     if(board.getValue(row, result) != 0){
@@ -91,9 +102,10 @@ public class Moves {
             }
         }
         board.update();
+        return false;
     }
 
-    public void right(){
+    public boolean right(){
         for(int row = 0; row < 4; row++){
             result = 3;
             for(int col = 3; col >= 0; col--){
@@ -104,6 +116,9 @@ public class Moves {
                     board.setValue(value * 2, row, result);
                     board.setValue(0, row, col);
                     score.newScore(value * 2);
+                    if(board.checkForWin()){
+                        return true;
+                    }
                     result--;
                 }else{
                     if(board.getValue(row, result) != 0){
@@ -118,5 +133,6 @@ public class Moves {
             }
         }
         board.update();
+        return false;
     }
 }

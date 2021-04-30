@@ -34,13 +34,21 @@ public class Controller implements KeyListener{
     @Override
     public void keyPressed(KeyEvent e){
         if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-            mover.right();
+            if(mover.right()){
+                this.onFinish();
+            }
         }else if(e.getKeyCode() == KeyEvent.VK_LEFT){
-            mover.left();
+            if(mover.left()){
+                this.onFinish();
+            }
         }else if(e.getKeyCode() == KeyEvent.VK_UP){
-            mover.up();
+            if(mover.up()){
+                this.onFinish();
+            }
         }else if(e.getKeyCode() == KeyEvent.VK_DOWN){
-            mover.down();
+            if(mover.down()){
+                this.onFinish();
+            }
         }
         board.addTile();
     }

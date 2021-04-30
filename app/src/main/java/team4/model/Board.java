@@ -85,4 +85,15 @@ public class Board {
         }
         return true;
     }
+
+    public boolean checkForWin(){
+        for(int i = 0; i < row; i++){
+            for(int j = 0; j < col; j++){
+                if(nums[i][j].getValue() == 2048){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
