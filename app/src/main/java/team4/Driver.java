@@ -12,7 +12,7 @@ public class Driver {
         BoardGUI boardGUI = new BoardGUI(board);
         LeaderboardGUI leaderboardGUI = new LeaderboardGUI();
         mainScreenGUI ui = new mainScreenGUI(score, boardGUI, leaderboardGUI);
-        Controller controller = new Controller(board, score, leaderboard, ui);
+        Controller controller = new Controller(board, score, leaderboard, ui, boardGUI);
         
         boardGUI.setFocusable(true);
         boardGUI.requestFocusInWindow();

@@ -11,12 +11,14 @@ public class Controller implements KeyListener{
     public Moves mover; 
     public Leaderboard leaderboard;
     public UserInterface userInterface;
+    public BoardGUI boardGUI;
 
-    public Controller(Board board, ObservableScore score, Leaderboard leaderboard, UserInterface userInterface){
+    public Controller(Board board, ObservableScore score, Leaderboard leaderboard, UserInterface userInterface, BoardGUI boardGUI){
         this.board = board;
         this.score = score;
         this.leaderboard = leaderboard;
         this.userInterface = userInterface;
+        this.boardGUI = boardGUI;
         mover = new Moves(board, score);
     }
 
@@ -58,7 +60,7 @@ public class Controller implements KeyListener{
         if(playAgain){
             this.startNewGame();
         }else{
-            ui.requestFocusInWindow();
+            boardGUI.setFocusable(false);
         }
     }
 

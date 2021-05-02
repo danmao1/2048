@@ -165,7 +165,7 @@ public class mainScreenGUI implements UserInterface, ScoreObserver{
         int choice = JOptionPane.showConfirmDialog(frame, "You Won! Play again?", "Results", JOptionPane.YES_NO_OPTION);
         return choice == JOptionPane.YES_OPTION;
     }
-		
+    
     public void addNewGameListener(ActionListener l){
         newGameButton.addActionListener(l);
     }
