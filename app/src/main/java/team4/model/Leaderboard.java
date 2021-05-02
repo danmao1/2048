@@ -7,10 +7,10 @@ import java.net.URL;
 public class Leaderboard {
 	public String score; 
 	
-	public void leaderboardCalculation(int currentScore){
+	public void leaderboardCalculation(int currentScore,String filename){
 		try{
 			ArrayList<String> topScores = new ArrayList<String>();
-			File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
+			File file = new File(getClass().getClassLoader().getResource(filename).getFile());
 			BufferedReader br = new BufferedReader(new FileReader(file)); 
 			boolean bool=true;
 			while((score = br.readLine()) != null){
