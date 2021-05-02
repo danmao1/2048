@@ -27,7 +27,7 @@ public class Controller implements KeyListener{
     }
 
     public void startNewGame(){
-        leaderboard.leaderboardCalculation(getScore());
+        leaderboard.leaderboardCalculation(this.getScore());
         board.reset();
         score.reset();
         board.addTile();
