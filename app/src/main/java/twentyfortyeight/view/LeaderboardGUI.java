@@ -84,36 +84,38 @@ public class LeaderboardGUI {
         title.setForeground(Color.BLACK);
         title.setBounds(xCoord -85 , (yCoord) -110, width+250, height);
         mainPanel.add(title);
-        
-        best = new JLabel(scores.get(0));
-        best.setFont(new Font("Sans Serif", Font.PLAIN, 23));
-        best.setForeground(Color.BLACK);
-        best.setBounds(xCoord + 65, (yCoord), width, height);
-        mainPanel.add(best);
-        
-        secondScore= new JLabel(scores.get(1));
-        secondScore.setFont(new Font("Sans Serif", Font.PLAIN, 23));
-        secondScore.setForeground(Color.BLACK);
-        secondScore.setBounds(xCoord + 65, (yCoord)+74, width, height);
-        mainPanel.add(secondScore);
-        
-        thirdScore = new JLabel(scores.get(2));
-        thirdScore.setFont(new Font("Sans Serif", Font.PLAIN, 23));
-        thirdScore.setForeground(Color.BLACK);
-        thirdScore.setBounds(xCoord + 65, (yCoord)+74 * 2, width, height);
-        mainPanel.add(thirdScore);
-        
-        fourthScore = new JLabel(scores.get(3));
-        fourthScore.setFont(new Font("Sans Serif", Font.PLAIN, 23));
-        fourthScore.setForeground(Color.BLACK);
-        fourthScore.setBounds(xCoord + 65, (yCoord)+74 * 3, width, height);
-        mainPanel.add(fourthScore);
-        
-        fifthScore = new JLabel(scores.get(4));
-        fifthScore.setFont(new Font("Sans Serif", Font.PLAIN, 23));
-        fifthScore.setForeground(Color.BLACK);
-        fifthScore.setBounds(xCoord + 65, (yCoord)+74 * 4, width, height);
-        mainPanel.add(fifthScore);
+        if (scores.size()>0){
+			
+			best = new JLabel(scores.get(0));
+			best.setFont(new Font("Sans Serif", Font.PLAIN, 23));
+			best.setForeground(Color.BLACK);
+			best.setBounds(xCoord + 65, (yCoord), width, height);
+			mainPanel.add(best);
+			
+			secondScore= new JLabel(scores.get(1));
+			secondScore.setFont(new Font("Sans Serif", Font.PLAIN, 23));
+			secondScore.setForeground(Color.BLACK);
+			secondScore.setBounds(xCoord + 65, (yCoord)+74, width, height);
+			mainPanel.add(secondScore);
+			
+			thirdScore = new JLabel(scores.get(2));
+			thirdScore.setFont(new Font("Sans Serif", Font.PLAIN, 23));
+			thirdScore.setForeground(Color.BLACK);
+			thirdScore.setBounds(xCoord + 65, (yCoord)+74 * 2, width, height);
+			mainPanel.add(thirdScore);
+			
+			fourthScore = new JLabel(scores.get(3));
+			fourthScore.setFont(new Font("Sans Serif", Font.PLAIN, 23));
+			fourthScore.setForeground(Color.BLACK);
+			fourthScore.setBounds(xCoord + 65, (yCoord)+74 * 3, width, height);
+			mainPanel.add(fourthScore);
+			
+			fifthScore = new JLabel(scores.get(4));
+			fifthScore.setFont(new Font("Sans Serif", Font.PLAIN, 23));
+			fifthScore.setForeground(Color.BLACK);
+			fifthScore.setBounds(xCoord + 65, (yCoord)+74 * 4, width, height);
+			mainPanel.add(fifthScore);
+		}
 
 		URL firstPNG = this.getClass().getClassLoader().getResource("first.png");
         

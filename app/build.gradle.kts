@@ -26,5 +26,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass.set("team4.Driver")
+    mainClass.set("twentyfortyeight.Driver")
 }
