@@ -39,20 +39,19 @@ public class LeaderboardGUI {
 
     public LeaderboardGUI(){
 		try{
-            File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
-            scores = new ArrayList<String> ();
-            BufferedReader br = new BufferedReader(new FileReader(file)); 
-            String score;
-            
-            while((score = br.readLine()) != null){
-                scores.add(score);
-            }
-            br.close();
+		File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
+		scores = new ArrayList<String> ();
+		BufferedReader br = new BufferedReader(new FileReader(file)); 
+		String score;
+		
+		while((score = br.readLine()) != null){
+			scores.add(score);
+			}
 		}
 		catch (IOException e) {
 			e.getMessage();
 		}
-        	 
+			 
         frame = new JFrame("2048 Leaderboard");
         frame.setPreferredSize(new Dimension(500, 640));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
