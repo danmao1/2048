@@ -193,4 +193,27 @@ public class LeaderboardGUI {
 		}
 		 
 	}
+	public void updateScores() {
+		try{
+		File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
+		scores = new ArrayList<String> ();
+		BufferedReader br = new BufferedReader(new FileReader(file)); 
+		String score;
+		
+		while((score = br.readLine()) != null){
+			scores.add(score);
+		}
+		best.setText(scores.get(0));
+		secondScore.setText(scores.get(1));
+		thirdScore.setText(scores.get(2));
+		fourthScore.setText(scores.get(3));
+		fifthScore.setText(scores.get(4));
+		
+		
+		}
+		catch (IOException e) {
+			e.getMessage();
+		}
+		 
+	}
 }

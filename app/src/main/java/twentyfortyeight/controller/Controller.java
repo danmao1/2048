@@ -80,6 +80,7 @@ public class Controller implements KeyListener{
     }
 
     public void showMainScreen(LeaderboardGUI leaderboard){
+		leaderboard.updateScores();
         leaderboard.frame.dispose();
     }
     
@@ -87,6 +88,7 @@ public class Controller implements KeyListener{
     public void keyReleased(KeyEvent e){
 
     }
+   
 
     @Override
     public void keyTyped(KeyEvent e){
