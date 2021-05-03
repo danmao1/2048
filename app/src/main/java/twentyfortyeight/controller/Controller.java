@@ -74,7 +74,9 @@ public class Controller implements KeyListener{
     }
 
     public void showLeaderboard(LeaderboardGUI leaderboard){
+		leaderboard.updateScores();
 	    leaderboard.frame.setVisible(true);
+	    
     }
 
     public void showMainScreen(LeaderboardGUI leaderboard){
