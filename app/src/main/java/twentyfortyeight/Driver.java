@@ -4,6 +4,8 @@ import view.*;
 import controller.*;
 
 import java.awt.event.*;
+import java.io.*;
+
 public class Driver {
     public static void main(String args[]){
         Board board = new Board();
@@ -17,6 +19,26 @@ public class Driver {
         boardGUI.setFocusable(true);
         boardGUI.requestFocusInWindow();
         boardGUI.addKeyListener(controller);
+
+
+        WindowAdapter adapter = new WindowAdapter(){
+            public void windowClosing(WindowEvent e){
+                System.out.println("Window closed");
+                try{
+                    File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
+                    FileOutputStream fos = new FileOutputStream(file);
+                    BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
+        
+                    for(int j = 0; j < 5; j++){
+                        bw.write(leaderboard.topScores.get(j));
+                        bw.newLine();
+                    }
+                    bw.close();
+                }catch(IOException exception){
+                    exception.getMessage();
+                }
+            }
+        };
 
         ui.addNewGameListener(
             new ActionListener(){
@@ -46,5 +68,6 @@ public class Driver {
         
         controller.startNewGame();
         score.addScoreObserver(ui);
+        ui.addOnCloseListener(adapter);
     }
 }

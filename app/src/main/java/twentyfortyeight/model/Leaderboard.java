@@ -6,10 +6,11 @@ import java.net.URL;
 
 public class Leaderboard {
 	public String score; 
+	public ArrayList<String> topScores;
 	
-	public void leaderboardCalculation(int currentScore,String filename){
+	public void leaderboardCalculation(int currentScore, String filename){
 		try{
-			ArrayList<String> topScores = new ArrayList<String>();
+			topScores = new ArrayList<String>();
 			File file = new File(getClass().getClassLoader().getResource(filename).getFile());
 			BufferedReader br = new BufferedReader(new FileReader(file)); 
 			boolean bool=true;
@@ -34,6 +35,6 @@ public class Leaderboard {
 			br.close();
 		}catch(IOException e){
 			e.getMessage();
-		}	 
+		}
 	}	
 }

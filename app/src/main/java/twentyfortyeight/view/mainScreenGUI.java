@@ -139,14 +139,11 @@ public class mainScreenGUI implements UserInterface, ScoreObserver{
 
 	public void putBestScore(){
 		try {
-			File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
-				
+			File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());	
 			BufferedReader br = new BufferedReader(new FileReader(file)); 
 				
-				
-			best=br.readLine(); 
-		}
-		catch (IOException e) {
+			best = br.readLine(); 
+		}catch (IOException e) {
 			e.getMessage();
 		}
 		bestScoreLabel.setText(best);
@@ -181,6 +178,10 @@ public class mainScreenGUI implements UserInterface, ScoreObserver{
         int choice = JOptionPane.showConfirmDialog(frame, "You Won! Play again?", "Results", JOptionPane.YES_NO_OPTION);
         //int choice = JOptionPane.showConfirmDialog(null, makeOptionLabel(), "Play Again?", JOptionPane.YES_NO_OPTION);
         return choice == JOptionPane.YES_OPTION;
+    }
+
+    public void addOnCloseListener(WindowListener l){
+        frame.addWindowListener(l);
     }
     
     public void addNewGameListener(ActionListener l){

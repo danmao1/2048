@@ -39,16 +39,15 @@ public class LeaderboardGUI {
 
     public LeaderboardGUI(){
 		try{
-		File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
-		scores = new ArrayList<String> ();
-		BufferedReader br = new BufferedReader(new FileReader(file)); 
-		String score;
-		
-		while((score = br.readLine()) != null){
-			scores.add(score);
-			}
-		}
-		catch (IOException e) {
+            File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
+            scores = new ArrayList<String> ();
+            BufferedReader br = new BufferedReader(new FileReader(file)); 
+            String score;
+            
+            while((score = br.readLine()) != null){
+                scores.add(score);
+            }
+		}catch(IOException e) {
 			e.getMessage();
 		}
 			 
