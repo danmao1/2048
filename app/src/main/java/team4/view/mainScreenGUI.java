@@ -161,8 +161,24 @@ public class mainScreenGUI implements UserInterface, ScoreObserver{
         }
     }
 
+    public JPanel makeOptionLabel(){
+        JPanel optionPanel = new JPanel();
+
+        URL optionPNG = this.getClass().getClassLoader().getResource("PlayAgain.png");
+        ImageIcon optionIcon = new ImageIcon(optionPNG);
+        Image tempOption = optionIcon.getImage();
+        Image newOption = tempOption.getScaledInstance(200, 120, java.awt.Image.SCALE_SMOOTH);
+        ImageIcon optionScaled = new ImageIcon(newOption);
+        JLabel optionLabel = new JLabel(optionScaled);
+        optionLabel.setBounds(0, 0, 200, 120);
+
+        optionPanel.add(optionLabel);
+        return optionPanel;
+    }
+
     public boolean playAgain(){
-        int choice = JOptionPane.showConfirmDialog(frame, "You Won! Play again?", "Results", JOptionPane.YES_NO_OPTION);
+        //int choice = JOptionPane.showConfirmDialog(frame, "You Won! Play again?", "Results", JOptionPane.YES_NO_OPTION);
+        int choice = JOptionPane.showConfirmDialog(null, makeOptionLabel(), "Play Again?", JOptionPane.YES_NO_OPTION);
         return choice == JOptionPane.YES_OPTION;
     }
     
