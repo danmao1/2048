@@ -31,6 +31,7 @@ public class Controller implements KeyListener{
         board.reset();
         score.reset();
         board.addTile();
+        userInterface.putBestScore();
     }
 
     @Override
@@ -38,21 +39,28 @@ public class Controller implements KeyListener{
         if(e.getKeyCode() == KeyEvent.VK_RIGHT){
             if(mover.right()){
                 this.onFinish();
+            }else{
+                board.addTile();
             }
         }else if(e.getKeyCode() == KeyEvent.VK_LEFT){
             if(mover.left()){
                 this.onFinish();
+            }else{
+                board.addTile();
             }
         }else if(e.getKeyCode() == KeyEvent.VK_UP){
             if(mover.up()){
                 this.onFinish();
+            }else{
+                board.addTile();
             }
         }else if(e.getKeyCode() == KeyEvent.VK_DOWN){
             if(mover.down()){
                 this.onFinish();
+            }else{
+                board.addTile();
             }
         }
-        board.addTile();
     }
 
     public void onFinish(){
@@ -60,6 +68,7 @@ public class Controller implements KeyListener{
         if(playAgain){
             this.startNewGame();
         }else{
+            userInterface.putBestScore();
             boardGUI.setFocusable(false);
         }
     }

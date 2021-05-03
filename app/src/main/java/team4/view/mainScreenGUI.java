@@ -86,7 +86,7 @@ public class mainScreenGUI implements UserInterface, ScoreObserver{
 
         menuPanel.add(scoreImageLabel);
 
-        
+        /*
 		try {
 			File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
 				
@@ -98,6 +98,7 @@ public class mainScreenGUI implements UserInterface, ScoreObserver{
 		catch (IOException e) {
 			e.getMessage();
 		}
+        */
 
 	
 		
@@ -177,8 +178,8 @@ public class mainScreenGUI implements UserInterface, ScoreObserver{
     }
 
     public boolean playAgain(){
-        //int choice = JOptionPane.showConfirmDialog(frame, "You Won! Play again?", "Results", JOptionPane.YES_NO_OPTION);
-        int choice = JOptionPane.showConfirmDialog(null, makeOptionLabel(), "Play Again?", JOptionPane.YES_NO_OPTION);
+        int choice = JOptionPane.showConfirmDialog(frame, "You Won! Play again?", "Results", JOptionPane.YES_NO_OPTION);
+        //int choice = JOptionPane.showConfirmDialog(null, makeOptionLabel(), "Play Again?", JOptionPane.YES_NO_OPTION);
         return choice == JOptionPane.YES_OPTION;
     }
     

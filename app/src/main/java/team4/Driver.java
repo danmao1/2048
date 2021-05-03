@@ -23,7 +23,6 @@ public class Driver {
                 public void actionPerformed(ActionEvent e){
                     controller.startNewGame();
                     boardGUI.requestFocusInWindow();
-                    ui.putBestScore();
                 }
             }
         );

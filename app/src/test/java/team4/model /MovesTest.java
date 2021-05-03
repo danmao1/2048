@@ -11,7 +11,7 @@ public class MovesTest {
     public void emptyColumnUpTest(){
         Board board = new Board();
         BoardGUI gui = new BoardGUI(board);
-        Score score = new Score();
+        ObservableScore score = new ObservableScore();
         Moves mover = new Moves(board, score);
 
         board.setValue(2, 3, 0);
@@ -24,7 +24,7 @@ public class MovesTest {
     public void columnWithDifferentTileUpTest(){
         Board board = new Board();
         BoardGUI gui = new BoardGUI(board);
-        Score score = new Score();
+        ObservableScore score = new ObservableScore();
         Moves mover = new Moves(board, score);
 
         board.setValue(2, 3, 0);
@@ -38,7 +38,7 @@ public class MovesTest {
     public void columnWithSameTileUpTest(){
         Board board = new Board();
         BoardGUI gui = new BoardGUI(board);
-        Score score = new Score();
+        ObservableScore score = new ObservableScore();
         Moves mover = new Moves(board, score);
 
         board.setValue(2, 3, 0);
@@ -52,7 +52,7 @@ public class MovesTest {
     public void emptyColumnDownTest(){
         Board board = new Board();
         BoardGUI gui = new BoardGUI(board);
-        Score score = new Score();
+        ObservableScore score = new ObservableScore();
         Moves mover = new Moves(board, score);
 
         board.setValue(2, 0, 0);
@@ -65,7 +65,7 @@ public class MovesTest {
     public void columnWithDifferentTileDownTest(){
         Board board = new Board();
         BoardGUI gui = new BoardGUI(board);
-        Score score = new Score();
+        ObservableScore score = new ObservableScore();
         Moves mover = new Moves(board, score);
 
         board.setValue(4, 3, 0);
@@ -79,7 +79,7 @@ public class MovesTest {
     public void columnWithSameTileDownTest(){
         Board board = new Board();
         BoardGUI gui = new BoardGUI(board);
-        Score score = new Score();
+        ObservableScore score = new ObservableScore();
         Moves mover = new Moves(board, score);
 
         board.setValue(2, 0, 0);
@@ -93,7 +93,7 @@ public class MovesTest {
     public void emptyRowLeftTest(){
         Board board = new Board();
         BoardGUI gui = new BoardGUI(board);
-        Score score = new Score();
+        ObservableScore score = new ObservableScore();
         Moves mover = new Moves(board, score);
 
         board.setValue(2, 0, 3);
@@ -106,7 +106,7 @@ public class MovesTest {
     public void rowWithDifferentTileLeftTest(){
         Board board = new Board();
         BoardGUI gui = new BoardGUI(board);
-        Score score = new Score();
+        ObservableScore score = new ObservableScore();
         Moves mover = new Moves(board, score);
 
         board.setValue(2, 0, 3);
@@ -120,7 +120,7 @@ public class MovesTest {
     public void rowWithSameTileLeftTest(){
         Board board = new Board();
         BoardGUI gui = new BoardGUI(board);
-        Score score = new Score();
+        ObservableScore score = new ObservableScore();
         Moves mover = new Moves(board, score);
 
         board.setValue(2, 0, 0);
@@ -134,7 +134,7 @@ public class MovesTest {
     public void emptyRowRightTest(){
         Board board = new Board();
         BoardGUI gui = new BoardGUI(board);
-        Score score = new Score();
+        ObservableScore score = new ObservableScore();
         Moves mover = new Moves(board, score);
 
         board.setValue(2, 0, 0);
@@ -147,7 +147,7 @@ public class MovesTest {
     public void rowWithDifferentTileRightTest(){
         Board board = new Board();
         BoardGUI gui = new BoardGUI(board);
-        Score score = new Score();
+        ObservableScore score = new ObservableScore();
         Moves mover = new Moves(board, score);
 
         board.setValue(2, 0, 0);
@@ -161,7 +161,7 @@ public class MovesTest {
     public void rowWithSameTileRightTest(){
         Board board = new Board();
         BoardGUI gui = new BoardGUI(board);
-        Score score = new Score();
+        ObservableScore score = new ObservableScore();
         Moves mover = new Moves(board, score);
 
         board.setValue(2, 0, 0);

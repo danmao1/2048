@@ -14,14 +14,14 @@ public class ScoreTest {
     @Test
     public void testUpdate(){
         Score score = new Score();
-        score.update(16);
+        score.newScore(16);
         assertEquals("Current score should be updated to 16", 16, score.getScore());
     }
 
     @Test 
     public void testReset(){
         Score score = new Score();
-        score.update(4);
+        score.newScore(4);
         score.reset();
         assertEquals("Current score should be reset to 0", 0, score.getScore());
     }
