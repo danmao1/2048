@@ -40,7 +40,7 @@ public class LeaderboardGUI {
     public LeaderboardGUI(){
 		try{
             scores = new ArrayList<String> ();
-            File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
+            File file = new File("scores.txt");
             BufferedReader br = new BufferedReader(new FileReader(file)); 
             String score;
             
@@ -84,7 +84,7 @@ public class LeaderboardGUI {
         title.setBounds(xCoord -85 , (yCoord) -110, width+250, height);
         mainPanel.add(title);
         
-        if (scores.size()>0){
+        if (scores.size() > 0){
 			
 			best = new JLabel(scores.get(0));
 			best.setFont(new Font("Sans Serif", Font.PLAIN, 23));
@@ -171,21 +171,19 @@ public class LeaderboardGUI {
     
     public void updateScores() {
 		try{
-		File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
-		scores = new ArrayList<String> ();
-		BufferedReader br = new BufferedReader(new FileReader(file)); 
-		String score;
-		
-		while((score = br.readLine()) != null){
-			scores.add(score);
-		}
-		best.setText(scores.get(0));
-		secondScore.setText(scores.get(1));
-		thirdScore.setText(scores.get(2));
-		fourthScore.setText(scores.get(3));
-		fifthScore.setText(scores.get(4));
-		
-		
+            File file = new File("scores.txt");
+            scores = new ArrayList<String> ();
+            BufferedReader br = new BufferedReader(new FileReader(file)); 
+            String score;
+            
+            while((score = br.readLine()) != null){
+                scores.add(score);
+            }
+            best.setText(scores.get(0));
+            secondScore.setText(scores.get(1));
+            thirdScore.setText(scores.get(2));
+            fourthScore.setText(scores.get(3));
+            fifthScore.setText(scores.get(4));
 		}
 		catch (IOException e) {
 			e.getMessage();

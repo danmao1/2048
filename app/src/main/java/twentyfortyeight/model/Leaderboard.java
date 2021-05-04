@@ -11,7 +11,7 @@ public class Leaderboard {
 	public void leaderboardCalculation(int currentScore, String filename){
 		try{
 			scores = new ArrayList<String> ();
-			File file = new File(getClass().getClassLoader().getResource(filename).getFile());
+			File file = new File(filename);
 			BufferedReader br = new BufferedReader(new FileReader(file)); 
 			boolean bool=true;
 			while((score = br.readLine()) != null){

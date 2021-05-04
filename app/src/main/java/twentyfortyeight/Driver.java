@@ -5,9 +5,12 @@ import controller.*;
 
 import java.awt.event.*;
 import java.io.*;
+import java.util.*;
 
 public class Driver {
     public static void main(String args[]){
+        ArrayList<String> scores = new ArrayList<String>();
+
         Board board = new Board();
         ObservableScore score = new ObservableScore();
         Leaderboard leaderboard = new Leaderboard();
@@ -23,12 +26,11 @@ public class Driver {
 
         WindowAdapter adapter = new WindowAdapter(){
             public void windowClosing(WindowEvent e){
-                try{
-                    File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
-                    FileWriter myWriter = new FileWriter(file);
-                    //String path = file.getPath();
-                    //System.out.println(path);
-        
+                try
+                {
+                    File outFile = new File("scores.txt"); 
+                    outFile.createNewFile();
+                    FileWriter myWriter = new FileWriter(outFile);
                     for(int j = 0; j < 5; j++){
                         myWriter.write(leaderboard.scores.get(j));
                         myWriter.write("\n");
@@ -39,6 +41,26 @@ public class Driver {
                 }
             }
         };
+
+        try{
+            File myObj = new File("scores.txt");
+            Scanner myReader = new Scanner(myObj);
+            boolean bool = true;
+            while (myReader.hasNextLine()){
+                String data = myReader.nextLine();
+                int i = Integer.parseInt(data);
+                if(controller.getScore() > i && bool){
+                    String newleader = String.valueOf(controller.getScore());
+					scores.add(newleader);
+					bool = false;
+                }
+                scores.add(data);
+            }
+            myReader.close();
+        }catch (IOException e){
+            e.getMessage();
+        }
+        ui.addOnCloseListener(adapter);
 
         ui.addNewGameListener(
             new ActionListener(){
@@ -68,6 +90,5 @@ public class Driver {
         
         controller.startNewGame();
         score.addScoreObserver(ui);
-        ui.addOnCloseListener(adapter);
     }
 }

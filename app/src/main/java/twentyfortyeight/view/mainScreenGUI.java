@@ -139,7 +139,7 @@ public class mainScreenGUI implements UserInterface, ScoreObserver{
 
 	public void putBestScore(){
 		try {
-			File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());	
+			File file = new File("scores.txt");	
 			BufferedReader br = new BufferedReader(new FileReader(file)); 
 				
 			best = br.readLine(); 
