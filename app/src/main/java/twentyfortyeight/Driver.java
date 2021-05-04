@@ -26,14 +26,13 @@ public class Driver {
                 System.out.println("Window closed");
                 try{
                     File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
-                    FileOutputStream fos = new FileOutputStream(file);
-                    BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
+                    FileWriter myWriter = new FileWriter(file);
         
                     for(int j = 0; j < 5; j++){
-                        bw.write(leaderboard.scores.get(j));
-                        bw.newLine();
+                        myWriter.write(leaderboard.scores.get(j));
+                        myWriter.write("\n");
                     }
-                    bw.close();
+                    myWriter.close();
                 }catch(IOException exception){
                     exception.getMessage();
                 }
