@@ -6,11 +6,11 @@ import java.net.URL;
 
 public class Leaderboard {
 	public String score; 
-	public ArrayList<String> topScores;
+	public ArrayList<String> scores;
 	
 	public void leaderboardCalculation(int currentScore, String filename){
 		try{
-			topScores = new ArrayList<String>();
+			scores = new ArrayList<String> ();
 			File file = new File(getClass().getClassLoader().getResource(filename).getFile());
 			BufferedReader br = new BufferedReader(new FileReader(file)); 
 			boolean bool=true;
@@ -18,17 +18,17 @@ public class Leaderboard {
 				int i = Integer.parseInt(score);
 				if(currentScore > i && bool){
 					String newleader = String.valueOf(currentScore);
-					topScores.add(newleader);
+					scores.add(newleader);
 					bool=false;
 				}
-				topScores.add(score);
+				scores.add(score);
 			}
 			
 			FileOutputStream fos = new FileOutputStream(file);
 			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
 
 			for(int j = 0; j < 5; j++){
-				bw.write(topScores.get(j));
+				bw.write(scores.get(j));
 				bw.newLine();
 			}
 			bw.close();

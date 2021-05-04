@@ -30,7 +30,7 @@ public class Driver {
                     BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
         
                     for(int j = 0; j < 5; j++){
-                        bw.write(leaderboard.topScores.get(j));
+                        bw.write(leaderboard.scores.get(j));
                         bw.newLine();
                     }
                     bw.close();

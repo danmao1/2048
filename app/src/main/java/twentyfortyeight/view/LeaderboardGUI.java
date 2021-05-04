@@ -39,8 +39,8 @@ public class LeaderboardGUI {
 
     public LeaderboardGUI(){
 		try{
-            File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
             scores = new ArrayList<String> ();
+            File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
             BufferedReader br = new BufferedReader(new FileReader(file)); 
             String score;
             
