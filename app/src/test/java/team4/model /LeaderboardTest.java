@@ -13,22 +13,20 @@ public class LeaderboardTest {
     
 	@Test  // original leaderTest is 1000, 500, 250, 125, 50
 	public void leaderboardCalcTest(){
-		leaderboard= new Leaderboard();
-		leaderboard.leaderboardCalculation(99999,"leaderTest.txt");
+		leaderboard = new Leaderboard();
+		leaderboard.leaderboardCalculation(99999, "leaderTest.txt");
 		try {
-		File file = new File(getClass().getClassLoader().getResource("leaderTest.txt").getFile());
+			File file = new File("leaderTest.txt");
+			BufferedReader br = new BufferedReader(new FileReader(file)); 
+				
+			compare = br.readLine();
 			
-		BufferedReader br = new BufferedReader(new FileReader(file)); 
-			
-			
-		compare=br.readLine();
-		
-		int textVal= Integer.parseInt(compare);
-		assertEquals("Error: leaderboard was not updated",99999,textVal);
-	}
-	catch (IOException e){
-		e.getMessage();
-	}
+			int textVal= Integer.parseInt(compare);
+			assertEquals("Error: leaderboard was not updated", 99999, textVal);
+		}
+		catch (IOException e){
+			e.getMessage();
+		}
 		
 	}
 		
