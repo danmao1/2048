@@ -23,10 +23,11 @@ public class Driver {
 
         WindowAdapter adapter = new WindowAdapter(){
             public void windowClosing(WindowEvent e){
-                System.out.println("Window closed");
                 try{
                     File file = new File(getClass().getClassLoader().getResource("scores.txt").getFile());
                     FileWriter myWriter = new FileWriter(file);
+                    //String path = file.getPath();
+                    //System.out.println(path);
         
                     for(int j = 0; j < 5; j++){
                         myWriter.write(leaderboard.scores.get(j));
